@@ -1,7 +1,6 @@
 package pt.labfinal;
 
-public class Item {
-	public static void main(String args[]) {
-		System.out.println("oi");
-	}
+public interface Item {
+	public String getNome();
+	public int getPreco();
 }
