@@ -38,11 +38,6 @@ public class Mar {
 			}
 		}
 	}
-	
-	public void conecta(Componente c) {
-		c.add(this);
-	}
-	
 	public void associaCelula(Componente c, int x, int y) {
 		if((x < 10)&&(y < 10)&&(x >= 0)&&(y >= 0)) {
 			celulas[x][y].adicionaComponente(c);

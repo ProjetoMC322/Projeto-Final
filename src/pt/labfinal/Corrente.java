@@ -1,16 +1,19 @@
 package pt.labfinal;
 
-public class Oficina implements Componente{
+public class Corrente implements Componente{
 	private String nome;
 	private int x, y, z;
 	//imagem
-	Oficina(String nome, int x, int y, int z){
+	Corrente(String nome, int x, int y, int z){
 		this.nome = nome;
 		this.x = x;
 		this.y = y;
 		this.z = z;
 	}
 	
+	public String getNome() {
+		return nome;
+	}
 	public int getX() {
 		return x;
 	};
@@ -31,14 +34,11 @@ public class Oficina implements Componente{
 		this.z = novo;
 	};
 	
-	public String getNome() {
-		return nome;
-	}
-	
 	public void andar() {
 		return;
 	}
 	public void atirar(){
 		return;
 	}
+
 }
