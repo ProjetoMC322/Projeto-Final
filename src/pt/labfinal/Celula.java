@@ -69,4 +69,23 @@ public class Celula {
 			nComponentes++;
 		}
 	}
+	
+	public boolean checarInimigo() {
+		for(int i = 0; i<nComponentes; i++) {
+			if(componentes[i] instanceof Inimigo) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void causarDano(int dano) {
+		for(int i = 0; i<nComponentes; i++) {
+			if(componentes[i] instanceof Inimigo) {
+				componentes[i].alteraHP((-1)*dano);
+				return;
+			}
+		}
+		//throw error
+	}
 }

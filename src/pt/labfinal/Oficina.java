@@ -41,4 +41,7 @@ public class Oficina implements Componente{
 	public void atirar(){
 		return;
 	}
+	public void alteraHP(int novo) {
+		return;
+	}
 }

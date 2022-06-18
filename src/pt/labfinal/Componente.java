@@ -9,5 +9,5 @@ public interface Componente {
 	public void setZ(int novo);
 	public String getNome();
 	public void andar();
-	public void atirar();
+	public void alteraHP(int valor);
 }

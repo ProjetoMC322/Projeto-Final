@@ -1,12 +1,14 @@
 package pt.labfinal;
 
+import java.util.Random;
+
 public class Mar {
 	private String nome;
 	private Peixe peixes[] = new Peixe[3];
 	private int probabilidades[] = new int[3];
 	private Celula celulas[][] = new Celula[10][10];
 	private Arma armas[] = new Arma[3];
-	private Vara varas[] = new Vara[3];;
+	private Vara varas[] = new Vara[3];
 	//melhorias
 	//imagem
 	//inimigos
@@ -59,4 +61,22 @@ public class Mar {
 			celulas[x][y].removeComponente(nome);
 		}
 	}
+	
+	public Peixe pescar() {
+		Random rand = new Random();
+		int num = rand.nextInt(101), aux = 0;
+		while(num>probabilidades[aux]) {
+			aux++;
+		}
+		return peixes[aux];
+	}
+	
+	public boolean checarInimigo(int x, int y) {
+    	return celulas[x][y].checarInimigo();
+    }
+	
+	public void causarDano(int x, int y, int dano) {
+		celulas[x][y].causarDano(dano);
+	}
+	
 }

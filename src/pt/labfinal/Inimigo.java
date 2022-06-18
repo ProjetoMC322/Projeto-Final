@@ -1,14 +1,16 @@
 package pt.labfinal;
 
-public class Corrente implements Componente{
+public class Inimigo implements Componente{
 	private String nome;
-	private int x, y, z;
+	private int x, y, z, hpMax, hpAtual; ;
 	//imagem
-	Corrente(String nome, int x, int y, int z){
+	Inimigo(String nome, int x, int y, int z, int hp){
 		this.nome = nome;
 		this.x = x;
 		this.y = y;
 		this.z = z;
+		this.hpAtual = hp;
+		this.hpMax = hp;
 	}
 	
 	public String getNome() {
@@ -24,6 +26,16 @@ public class Corrente implements Componente{
 	public int getZ() {
 		return z;
 	};
+	
+	public int getHP() {
+		return hpAtual;
+	};
+	public int getHPMax() {
+		return hpMax;
+	};
+	public void alteraHP(int mudanca) {
+		hpAtual += mudanca;
+	}
 	public void setX(int novo) {
 		this.x = novo;
 	};
@@ -38,9 +50,6 @@ public class Corrente implements Componente{
 		return;
 	}
 	public void atirar(){
-		return;
-	}
-	public void alteraHP(int novo) {
 		return;
 	}
 

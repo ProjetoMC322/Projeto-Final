@@ -4,7 +4,8 @@ public class Bond implements Componente{
 	
 	private static final Bond instance = new Bond ();
 	private String nome = "Bond";
-	private int x, y, z, hp;
+	private int x, y, z, hpMax, hpAtual;
+	private Inventario mala = new Inventario();
 	
 	private Bond(){}
 
@@ -12,8 +13,22 @@ public class Bond implements Componente{
         return instance;
     }
     
+    public void setHP(int max) {
+    	hpMax = max;
+    	hpAtual = max;
+	};
+	public void alteraHP(int mudanca) {
+		hpAtual += mudanca;
+	};
+	public void melhoraHP(int aumento) {
+		hpAtual += aumento;
+		hpMax += aumento;
+	}
     public int getHP() {
-		return hp;
+		return hpAtual;
+	};
+	public int getHPMax() {
+		return hpMax;
 	};
     public int getX() {
 		return x;
@@ -36,6 +51,14 @@ public class Bond implements Componente{
 	
 	public String getNome() {
 		return nome;
+	}
+	
+	public void pescar(Mapa mapa) {
+		mala.addPeixe(mala.getVara(0).pescar(mapa));
+	}
+	
+	public void atirar(Mapa mapa, String movimento) {
+		mala.getArma(0).atirar(mapa, movimento, x, y);
 	}
 	
 }

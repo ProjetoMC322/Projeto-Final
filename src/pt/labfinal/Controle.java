@@ -19,16 +19,16 @@ public class Controle {
 					comandos.substring(i, i+1).equalsIgnoreCase("a") ||	
 					comandos.substring(i, i+1).equalsIgnoreCase("s") ||
 					comandos.substring(i, i+1).equalsIgnoreCase("d") ) {
-						bond.andar(caverna, comandos.substring(i, i + 1)); 
+						bond.andar(mapa, comandos.substring(i, i + 1)); 
 				}
 				else if (comandos.substring(i, i+1).equalsIgnoreCase("i") ||
 						comandos.substring(i, i+1).equalsIgnoreCase("j") ||	
 						comandos.substring(i, i+1).equalsIgnoreCase("k") ||
 						comandos.substring(i, i+1).equalsIgnoreCase("l")) {
-							bond.atirar();
+							bond.atirar(mapa, comandos.substring(i, i+1));
 				}
 				else if (comandos.substring(i, i+1).equalsIgnoreCase("p")) {
-					bond.pescar();
+					bond.pescar(mapa);
 				}
 				else if (comandos.substring(i, i+1).equalsIgnoreCase("u")) {
 					//inventario

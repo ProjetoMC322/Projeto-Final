@@ -41,5 +41,7 @@ public class Mercado implements Componente{
 	public void atirar(){
 		return;
 	}
-
+	public void alteraHP(int novo) {
+		return;
+	}
 }

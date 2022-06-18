@@ -29,4 +29,14 @@ public class Vara implements Item{
 	public int getDurabilidadeAtual() {
 		return durabilidadeAtual;
 	}
+	
+	public Peixe pescar(Mapa mapa) {
+		if(durabilidadeAtual<1) {
+			//erro arma sem durabilidade
+			return null;
+		}else {
+			durabilidadeAtual--;
+			return mapa.pescar();
+		}
+	}
 }

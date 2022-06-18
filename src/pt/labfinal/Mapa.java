@@ -27,4 +27,16 @@ public class Mapa {
     public void conecta(Componente c) {
 		mares[c.getZ()].associaCelula(c, c.getX(), c.getY());
 	}
+    
+    public Peixe pescar() {
+    	return mares[marAtivo].pescar();
+    }
+    
+    public boolean checarInimigo(int x, int y) {
+    	return mares[marAtivo].checarInimigo(x, y);
+    }
+    
+    public void causarDano(int x, int y, int dano) {
+    	mares[marAtivo].causarDano(x, y, dano);
+    }
 }
