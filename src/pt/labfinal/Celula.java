@@ -60,14 +60,6 @@ public class Celula {
 		nComponentes--;
 	}
 	
-	public void removeBond() {
-		for(int i = 0; i<nComponentes; i++) {
-			if(componentes[i] instanceof Bond) { 
-				removeComponente("Bond");
-			}
-		}
-	}
-	
 	public void adicionaBond(Bond b) {
 		if(nComponentes > 0 && componentes[nComponentes-1] instanceof Inimigo) {
 			//decidir o que fazer
