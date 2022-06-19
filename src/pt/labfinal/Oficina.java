@@ -35,7 +35,7 @@ public class Oficina implements Componente{
 		return nome;
 	}
 	
-	public void andar() {
+	public void andar(String movimento, Mapa mapa) {
 		return;
 	}
 	public void atirar(){

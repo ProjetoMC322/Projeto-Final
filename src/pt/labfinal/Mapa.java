@@ -39,4 +39,8 @@ public class Mapa {
     public void causarDano(int x, int y, int dano) {
     	mares[marAtivo].causarDano(x, y, dano);
     }
+    
+    public void moveBond(int xa, int ya, int xd, int yd, Bond p) {
+    	mares[marAtivo].moveBond(xa, ya, xd, yd, p);
+    }
 }

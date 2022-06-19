@@ -39,7 +39,7 @@ public class Arma implements Item{
 		}
 		if (movimento.equalsIgnoreCase("i")) {
 			while(x>0) {
-				if(mapa.checarInimigo(x-1, y){
+				if(mapa.checarInimigo(x-1, y)){
 					mapa.causarDano(x-1, y, dano);
 					municaoAtual--;
 					return;
@@ -48,6 +48,40 @@ public class Arma implements Item{
 			}
 			municaoAtual--;
 			return;
+		}else if (movimento.equalsIgnoreCase("j")) {
+			while(y>0) {
+				if(mapa.checarInimigo(x, y-1)){
+					mapa.causarDano(x, y-1, dano);
+					municaoAtual--;
+					return;
+				}
+				y--;
+			}
+			municaoAtual--;
+			return;
+		}else if (movimento.equalsIgnoreCase("k")) {
+			while(x<9) {
+				if(mapa.checarInimigo(x+1, y)){
+					mapa.causarDano(x+1, y, dano);
+					municaoAtual--;
+					return;
+				}
+				x++;
+			}
+			municaoAtual--;
+			return;
+		}else if (movimento.equalsIgnoreCase("l")) {
+			while(y<9) {
+				if(mapa.checarInimigo(x, y+1)){
+					mapa.causarDano(x, y+1, dano);
+					municaoAtual--;
+					return;
+				}
+				y++;
+			}
+			municaoAtual--;
+			return;
 		}
+		return;
 	}
 }

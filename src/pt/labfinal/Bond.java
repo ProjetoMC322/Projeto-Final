@@ -61,4 +61,28 @@ public class Bond implements Componente{
 		mala.getArma(0).atirar(mapa, movimento, x, y);
 	}
 	
+	public void andar(String movimento, Mapa mapa) {
+		if (movimento.equalsIgnoreCase("w")) {
+			mapa.moveBond(this.x, this.y, this.x - 1, this.y, this);
+			if(this.x > 0) {
+				this.x--;
+			}
+		}else if (movimento.equalsIgnoreCase("a")) {
+			mapa.moveBond(this.x, this.y, this.x, this.y -1, this);
+			if(this.y > 0) {
+				this.y--;
+			}
+		}else if (movimento.equalsIgnoreCase("s")) {
+			mapa.moveBond(this.x, this.y, this.x + 1, this.y, this);
+			if(this.x < 9) {
+				this.x++;
+			}
+		}else if (movimento.equalsIgnoreCase("d")) {
+			mapa.moveBond(this.x, this.y, this.x, this.y + 1, this);
+			if(this.y < 9) {
+				this.y++;
+			}
+		}
+	}
+	
 }

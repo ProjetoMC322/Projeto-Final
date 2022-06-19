@@ -8,6 +8,6 @@ public interface Componente {
 	public void setY(int novo);
 	public void setZ(int novo);
 	public String getNome();
-	public void andar();
+	public void andar(String movimento, Mapa mapa);
 	public void alteraHP(int valor);
 }

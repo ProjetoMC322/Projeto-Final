@@ -35,7 +35,7 @@ public class Mercado implements Componente{
 		this.z = novo;
 	};
 	
-	public void andar() {
+	public void andar(String movimento, Mapa mapa) {
 		return;
 	}
 	public void atirar(){
