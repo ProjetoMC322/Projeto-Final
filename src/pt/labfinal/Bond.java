@@ -16,38 +16,38 @@ public class Bond implements Componente{
     public void setHP(int max) {
     	hpMax = max;
     	hpAtual = max;
-	};
+	}
 	public void alteraHP(int mudanca) {
 		hpAtual += mudanca;
-	};
+	}
 	public void melhoraHP(int aumento) {
 		hpAtual += aumento;
 		hpMax += aumento;
 	}
     public int getHP() {
 		return hpAtual;
-	};
+	}
 	public int getHPMax() {
 		return hpMax;
-	};
+	}
     public int getX() {
 		return x;
-	};
+	}
 	public int getY() {
 		return y;
-	};
+	}
 	public int getZ() {
 		return z;
-	};
+	}
 	public void setX(int novo) {
 		this.x = novo;
-	};
+	}
 	public void setY(int novo) {
 		this.y = novo;
 	}
 	public void setZ(int novo) {
 		this.z = novo;
-	};
+	}
 	
 	public String getNome() {
 		return nome;
@@ -59,6 +59,10 @@ public class Bond implements Componente{
 	
 	public void atirar(Mapa mapa, String movimento) {
 		mala.getArma(0).atirar(mapa, movimento, x, y);
+	}
+	
+	public void equipar() {
+		mala.menus();
 	}
 	
 	public void andar(String movimento, Mapa mapa) {
@@ -81,6 +85,16 @@ public class Bond implements Componente{
 			mapa.moveBond(this.x, this.y, this.x, this.y + 1, this);
 			if(this.y < 9) {
 				this.y++;
+			}
+		}else if (movimento.equalsIgnoreCase("z")) {
+			mapa.sobeBond(false, this);
+			if(this.z < 5) {
+				this.z++;
+			}
+		}else if (movimento.equalsIgnoreCase("x")) {
+			mapa.sobeBond(true, this);
+			if(this.z > 0) {
+				this.z--;
 			}
 		}
 	}

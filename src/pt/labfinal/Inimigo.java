@@ -2,15 +2,16 @@ package pt.labfinal;
 
 public class Inimigo implements Componente{
 	private String nome;
-	private int x, y, z, hpMax, hpAtual; ;
+	private int x, y, z, hpMax, hpAtual, dano; 
 	//imagem
-	Inimigo(String nome, int x, int y, int z, int hp){
+	Inimigo(String nome, int x, int y, int z, int hp, int dano){
 		this.nome = nome;
 		this.x = x;
 		this.y = y;
 		this.z = z;
 		this.hpAtual = hp;
 		this.hpMax = hp;
+		this.dano = dano;
 	}
 	
 	public String getNome() {
@@ -52,5 +53,7 @@ public class Inimigo implements Componente{
 	public void atirar(){
 		return;
 	}
-
+	public void danifica(Bond bond) {
+		bond.alteraHP((-1)*dano);
+	}
 }

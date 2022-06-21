@@ -31,7 +31,7 @@ public class Controle {
 					bond.pescar(mapa);
 				}
 				else if (comandos.substring(i, i+1).equalsIgnoreCase("u")) {
-					//inventario
+					bond.equipar();
 				}
 				else if (comandos.substring(i, i+1).equalsIgnoreCase("m")) {
 					//entra no mercado/oficina 

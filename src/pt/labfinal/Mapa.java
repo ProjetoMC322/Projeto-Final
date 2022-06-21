@@ -43,4 +43,14 @@ public class Mapa {
     public void moveBond(int xa, int ya, int xd, int yd, Bond p) {
     	mares[marAtivo].moveBond(xa, ya, xd, yd, p);
     }
+    
+    public void sobeBond(boolean saida, Bond p) {
+    	mares[marAtivo].remove("Bond", p.getX(), p.getY());
+    	if(saida) {
+    		mares[marAtivo-1].colocaBond(p, saida);
+    	}else {
+    		mares[marAtivo+1].colocaBond(p, saida);
+    		//erros
+    	}
+    }
 }

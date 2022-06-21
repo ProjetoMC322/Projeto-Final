@@ -9,6 +9,7 @@ public class Mar {
 	private Celula celulas[][] = new Celula[10][10];
 	private Arma armas[] = new Arma[3];
 	private Vara varas[] = new Vara[3];
+	private Componente correntes[] = new Componente[3];
 	//melhorias
 	//imagem
 	//inimigos
@@ -43,6 +44,14 @@ public class Mar {
 	public void associaCelula(Componente c, int x, int y) {
 		if((x < 10)&&(y < 10)&&(x >= 0)&&(y >= 0)) {
 			celulas[x][y].adicionaComponente(c);
+			if(c instanceof Corrente) {
+				for(int i = 0; i<correntes.length; i++) {
+					if(correntes[i] == null) {
+						correntes[i] = c;
+						return;
+					}
+				}
+			}
 		}
 	}
 	
@@ -54,6 +63,20 @@ public class Mar {
 		}
 		celulas[xa][ya].removeComponente("Bond");
 		celulas[xd][yd].adicionaBond(p);
+	}
+	
+	public void colocaBond(Bond p, boolean saida) {
+		for(int i = 0; i<correntes.length; i++) {
+			if(saida) {
+				if(correntes[i].getNome().equals("Saida")) {
+					celulas[correntes[i].getX()][correntes[i].getY()].adicionaBond(p);
+				}
+			}else {
+				if(correntes[i].getNome().equals("Entrada")) {
+					celulas[correntes[i].getX()][correntes[i].getY()].adicionaBond(p);
+				}
+			}
+		}
 	}
 	
 	public void remove(String nome, int x, int y) {

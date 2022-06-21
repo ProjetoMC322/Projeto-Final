@@ -1,5 +1,7 @@
 package pt.labfinal;
 
+import java.util.Scanner;
+
 public class Inventario {
 	private int dinheiro;
 	private Arma armas[] = new Arma[10];
@@ -43,4 +45,46 @@ public class Inventario {
 			}
 		}
 	}
+	
+	public void menus() {
+		String comando = leTeclado();
+		if(comando.equalsIgnoreCase("u")) {
+			return;
+		}
+		if(comando.equalsIgnoreCase("1")) {
+			comando = leTeclado();
+			if(comando.matches("-?\\d+")) {
+				menus();
+			}
+			Arma aux = armas[Integer.parseInt(comando) - 1];
+			for(int i = (Integer.parseInt(comando) - 1); i>0; i--) {
+				armas[i] = armas[i-1];
+			}
+			armas[0] = aux;
+			menus();
+		}else if(comando.equalsIgnoreCase("2")) {
+			comando = leTeclado();
+			Vara aux = varas[Integer.parseInt(comando) - 1];
+			for(int i = (Integer.parseInt(comando) - 1); i>0; i--) {
+				varas[i] = varas[i-1];
+			}
+			varas[0] = aux;
+			menus();
+		}else if(comando.equalsIgnoreCase("3")) {
+			//peixes(interface gráfica) -> nao esquece de jogar pros menus se digitar u
+		}else {
+			menus();
+			//manda que o mano ta arrastando
+		}
+	}
+	
+	public String leTeclado() {
+		Scanner keyboard = new Scanner(System.in);
+		String command = keyboard.nextLine();
+		keyboard.close();
+		return command;
+	
+	}
 }
+
+	
