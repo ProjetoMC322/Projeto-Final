@@ -53,7 +53,7 @@ public class Inventario {
 		}
 		if(comando.equalsIgnoreCase("1")) {
 			comando = leTeclado();
-			if(comando.matches("-?\\d+")) {
+			if(!comando.matches("-?\\d+")) {
 				menus();
 			}
 			Arma aux = armas[Integer.parseInt(comando) - 1];
@@ -64,6 +64,9 @@ public class Inventario {
 			menus();
 		}else if(comando.equalsIgnoreCase("2")) {
 			comando = leTeclado();
+			if(!comando.matches("-?\\d+")) {
+				menus();
+			}
 			Vara aux = varas[Integer.parseInt(comando) - 1];
 			for(int i = (Integer.parseInt(comando) - 1); i>0; i--) {
 				varas[i] = varas[i-1];
@@ -85,6 +88,57 @@ public class Inventario {
 		return command;
 	
 	}
+	
+	public int venda() {
+		String comando = leTeclado();
+		if(comando.equalsIgnoreCase("m")) {
+			return 0;
+		}
+		if(comando.equalsIgnoreCase("1")) {
+			comando = leTeclado();
+			if(!comando.matches("-?\\d+")) {
+				return venda();
+			}
+			Arma aux = armas[Integer.parseInt(comando) - 1];
+			for(int i = (Integer.parseInt(comando) - 1); i>0; i--) {
+				armas[i] = armas[i-1];
+			}
+			return (aux.getPreco()*95)/100;
+		}else if(comando.equalsIgnoreCase("2")) {
+			comando = leTeclado();
+			if(!comando.matches("-?\\d+")) {
+				return venda();
+			}
+			Vara aux = varas[Integer.parseInt(comando) - 1];
+			for(int i = (Integer.parseInt(comando) - 1); i>0; i--) {
+				varas[i] = varas[i-1];
+			}
+			return (aux.getPreco()*95)/100;
+		}else if(comando.equalsIgnoreCase("3")) {
+			comando = leTeclado();
+			if(!comando.matches("-?\\d+")) {
+				return venda();
+			}
+			Peixe aux = peixes[Integer.parseInt(comando) - 1];
+			for(int i = (Integer.parseInt(comando) - 1); i>0; i--) {
+				peixes[i] = peixes[i-1];
+			}
+			return aux.getPreco();
+		}else {
+			return venda();
+			//manda que o mano ta arrastando
+		}
+	}
+	
+	public void adicionaMunicao() {
+		for(int i = 0; i<armas.length; i++) {
+			if(armas[i] == null) {
+				return;
+			}
+			armas[i].adicionaMunicao();
+		}
+	}
+	
 }
 
 	

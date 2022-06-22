@@ -23,7 +23,7 @@ public class Montador {
 			}else if(arquivo[i][0].equals("C")) {
 				mapa.conecta(new Corrente(arquivo[i][1], Integer.parseInt(arquivo[i][2]),
 						Integer.parseInt(arquivo[i][3]), Integer.parseInt(arquivo[i][4])));
-			}else if(arquivo[i][0].equals("M")) {
+			}else if(arquivo[i][0].equals("O")) {
 				mapa.conecta(new Oficina(arquivo[i][1], Integer.parseInt(arquivo[i][2]),
 						Integer.parseInt(arquivo[i][3]), Integer.parseInt(arquivo[i][4])));
 			}

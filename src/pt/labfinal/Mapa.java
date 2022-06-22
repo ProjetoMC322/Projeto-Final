@@ -33,7 +33,7 @@ public class Mapa {
     }
     
     public boolean checarInimigo(int x, int y) {
-    	return mares[marAtivo].checarInimigo(x, y);
+    	return mares[marAtivo].checar(x, y, 'i');
     }
     
     public void causarDano(int x, int y, int dano) {
@@ -52,5 +52,9 @@ public class Mapa {
     		mares[marAtivo+1].colocaBond(p, saida);
     		//erros
     	}
+    }
+    
+    public void entra(int x, int y, int z, Bond b) {
+    	mares[z].entra(x, y, b);
     }
 }

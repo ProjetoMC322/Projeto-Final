@@ -84,4 +84,11 @@ public class Arma implements Item{
 		}
 		return;
 	}
+	
+	public void adicionaMunicao() {
+		municaoAtual +=  municaoAtual/4;
+		if(municaoAtual > municaoMax) {
+			municaoAtual = municaoMax;
+		}
+	}
 }

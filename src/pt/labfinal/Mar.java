@@ -7,8 +7,8 @@ public class Mar {
 	private Peixe peixes[] = new Peixe[3];
 	private int probabilidades[] = new int[3];
 	private Celula celulas[][] = new Celula[10][10];
-	private Arma armas[] = new Arma[3];
-	private Vara varas[] = new Vara[3];
+	private Arma armas[] = new Arma[5];
+	private Vara varas[] = new Vara[5];
 	private Componente correntes[] = new Componente[3];
 	//melhorias
 	//imagem
@@ -49,6 +49,21 @@ public class Mar {
 					if(correntes[i] == null) {
 						correntes[i] = c;
 						return;
+					}
+				}
+			}else if(c instanceof Mercado) {
+				for(int i = 0; i<armas.length; i++) {
+					if(armas[i] == null) {
+						break;
+					}else {
+						c.adicionaArma(armas[i]);
+					}
+				}
+				for(int i = 0; i<varas.length; i++) {
+					if(varas[i] == null) {
+						break;
+					}else {
+						c.adicionaVara(varas[i]);
 					}
 				}
 			}
@@ -94,12 +109,23 @@ public class Mar {
 		return peixes[aux];
 	}
 	
-	public boolean checarInimigo(int x, int y) {
-    	return celulas[x][y].checarInimigo();
+	public boolean checar(int x, int y, char c) {
+    	return celulas[x][y].checar(c);
     }
 	
 	public void causarDano(int x, int y, int dano) {
 		celulas[x][y].causarDano(dano);
 	}
 	
+	public void entra(int x, int y, Bond b) {
+		if(celulas[x][y].checar('m')) {
+			//mercado
+		}else if(celulas[x][y].checar('o')) {
+			//oficina
+			celulas[x][y].entra(b);
+		}else {
+			//nao se paga de trouxa!
+			return;
+		}
+	}
 }

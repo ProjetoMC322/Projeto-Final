@@ -13,6 +13,14 @@ public class Bond implements Componente{
         return instance;
     }
     
+    public int getDinheiro() {
+    	return mala.getDinheiro();
+    }
+    
+    public void gastaDinheiro(int gasto) {
+    	mala.addDinheiro((-1)*gasto);
+    }
+    
     public void setHP(int max) {
     	hpMax = max;
     	hpAtual = max;
@@ -48,6 +56,12 @@ public class Bond implements Componente{
 	public void setZ(int novo) {
 		this.z = novo;
 	}
+	public void adicionaArma(Arma novo) {
+		mala.addArma(novo);
+	}
+	public void adicionaVara(Vara novo) {
+		mala.addVara(novo);
+	}
 	
 	public String getNome() {
 		return nome;
@@ -63,6 +77,14 @@ public class Bond implements Componente{
 	
 	public void equipar() {
 		mala.menus();
+	}
+	
+	public void entra(Mapa mapa) {
+		mapa.entra(x, y, z, this);
+	}	
+	
+	public void venda() {
+		gastaDinheiro((-1)*mala.venda());
 	}
 	
 	public void andar(String movimento, Mapa mapa) {
@@ -99,4 +121,8 @@ public class Bond implements Componente{
 		}
 	}
 	
+	public void adicionaMunicao() {
+		mala.adicionaMunicao();
+		return;
+	}
 }

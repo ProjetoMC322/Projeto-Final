@@ -34,7 +34,7 @@ public class Controle {
 					bond.equipar();
 				}
 				else if (comandos.substring(i, i+1).equalsIgnoreCase("m")) {
-					//entra no mercado/oficina 
+					bond.entra(mapa);
 				}else if (comandos.substring(i, i+1).equalsIgnoreCase("1")) {
 					//sethp -1
 					//break

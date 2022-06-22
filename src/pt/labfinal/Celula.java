@@ -70,13 +70,32 @@ public class Celula {
 		}
 	}
 	
-	public boolean checarInimigo() {
+	public boolean checar(char c) {
 		for(int i = 0; i<nComponentes; i++) {
-			if(componentes[i] instanceof Inimigo) {
-				return true;
+			if(c == 'i') {
+				if(componentes[i] instanceof Inimigo) {
+					return true;
+				}
+			}else if(c == 'm') {
+				if(componentes[i] instanceof Mercado) {
+					return true;
+				}
+			}else if(c == 'o') {
+				if(componentes[i] instanceof Oficina) {
+					return true;
+				}
 			}
 		}
 		return false;
+	}
+	
+	public void entra(Bond b) {
+		for(int i = 0; i<nComponentes; i++){
+			if(componentes[i] instanceof Mercado || componentes[i] instanceof Oficina) {
+				componentes[i].entra(b);
+				return;
+			}
+		}
 	}
 	
 	public void causarDano(int dano) {

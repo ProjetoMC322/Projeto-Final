@@ -10,4 +10,7 @@ public interface Componente {
 	public String getNome();
 	public void andar(String movimento, Mapa mapa);
 	public void alteraHP(int valor);
+	public void adicionaArma(Arma novo);
+	public void adicionaVara(Vara novo);
+	public void entra(Bond b);
 }
