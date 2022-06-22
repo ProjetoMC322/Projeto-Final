@@ -1,18 +1,20 @@
 package pt.labfinal;
 
 public class Peixe implements Item{
-	private String nome;
+	private String nome, imagem;
 	private int preco;
-	//imagem
-	Peixe(String nome, int preco){
+	Peixe(String nome, int preco, String imagem){
 		this.nome = nome;
 		this.preco = preco;
+		this.imagem = imagem;
 	}
 	
 	public String getNome() {
 		return nome;
 	}
-	
+	public String getImage() {
+		return imagem;
+	}
 	public int getPreco() {
 		return preco;
 	}

@@ -1,23 +1,26 @@
 package pt.labfinal;
 
 public class Vara implements Item{
-	private String nome;
+	private String nome, imagem;
 	private int preco;
 	private int durabilidadeMax;
 	private int durabilidadeAtual;
 	
 	//imagem
-	Vara(String nome, int preco, int durabilidade){
+	Vara(String nome, int preco, int durabilidade, String imagem){
 		this.nome = nome;
 		this.preco = preco;
 		this.durabilidadeAtual = durabilidade;
 		this.durabilidadeMax = durabilidade;
+		this.imagem = imagem;
 	}
 	
 	public String getNome() {
 		return nome;
 	}
-	
+	public String getImage() {
+		return imagem;
+	}
 	public int getPreco() {
 		return preco;
 	}

@@ -3,10 +3,10 @@ package pt.labfinal;
 import java.util.Scanner;
 
 public class Oficina implements Componente{
-	private String nome;
+	private String nome, imagem;
 	private int x, y, z, cura, precoCura, melhoria, precoMelhoria;
 	//imagem
-	Oficina(String nome, int x, int y, int z, int cura, int precoCura, int melhoria, int precoMelhoria){
+	Oficina(String nome, int x, int y, int z, int cura, int precoCura, int melhoria, int precoMelhoria, String imagem){
 		this.nome = nome;
 		this.x = x;
 		this.y = y;
@@ -15,6 +15,7 @@ public class Oficina implements Componente{
 		this.precoCura = precoCura;
 		this.melhoria = melhoria;
 		this.precoMelhoria = precoMelhoria;
+		this.imagem = imagem;
 	}
 	
 	public int getX() {
@@ -40,7 +41,9 @@ public class Oficina implements Componente{
 	public String getNome() {
 		return nome;
 	}
-	
+	public String getImage() {
+		return imagem;
+	}
 	public void andar(String movimento, Mapa mapa) {
 		return;
 	}
@@ -50,6 +53,12 @@ public class Oficina implements Componente{
 	}
 	
 	public void alteraHP(int novo) {
+		return;
+	}
+	public void adicionaArma(Arma a) {
+		return;
+	}
+	public void adicionaVara(Vara v) {
 		return;
 	}
 	

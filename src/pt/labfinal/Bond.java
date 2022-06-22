@@ -4,6 +4,7 @@ public class Bond implements Componente{
 	
 	private static final Bond instance = new Bond ();
 	private String nome = "Bond";
+	private String image = "naosei.png";
 	private int x, y, z, hpMax, hpAtual;
 	private Inventario mala = new Inventario();
 	
@@ -15,6 +16,10 @@ public class Bond implements Componente{
     
     public int getDinheiro() {
     	return mala.getDinheiro();
+    }
+    
+    public String getImage() {
+    	return image;
     }
     
     public void gastaDinheiro(int gasto) {
@@ -123,6 +128,10 @@ public class Bond implements Componente{
 	
 	public void adicionaMunicao() {
 		mala.adicionaMunicao();
+		return;
+	}
+	
+	public void entra(Bond b) {
 		return;
 	}
 }

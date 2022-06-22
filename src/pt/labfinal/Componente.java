@@ -8,6 +8,7 @@ public interface Componente {
 	public void setY(int novo);
 	public void setZ(int novo);
 	public String getNome();
+	public String getImage();
 	public void andar(String movimento, Mapa mapa);
 	public void alteraHP(int valor);
 	public void adicionaArma(Arma novo);

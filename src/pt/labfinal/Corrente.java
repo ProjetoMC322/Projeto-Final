@@ -2,17 +2,22 @@ package pt.labfinal;
 
 public class Corrente implements Componente{
 	private String nome;
+	private String imagem;
 	private int x, y, z;
 	//imagem
-	Corrente(String nome, int x, int y, int z){
+	Corrente(String nome, int x, int y, int z, String imagem){
 		this.nome = nome;
 		this.x = x;
 		this.y = y;
 		this.z = z;
+		this.imagem = imagem;
 	}
 	
 	public String getNome() {
 		return nome;
+	}
+	public String getImage() {
+		return imagem;
 	}
 	public int getX() {
 		return x;
@@ -41,6 +46,15 @@ public class Corrente implements Componente{
 		return;
 	}
 	public void alteraHP(int novo) {
+		return;
+	}
+	public void entra(Bond b) {
+		return;
+	}
+	public void adicionaArma(Arma a) {
+		return;
+	}
+	public void adicionaVara(Vara v) {
 		return;
 	}
 

@@ -4,21 +4,26 @@ import java.util.Scanner;
 
 public class Mercado implements Componente{
 	private String nome;
+	private String imagem;
 	private int x, y, z;
 	private Arma armas[] = new Arma[5];
 	private Vara varas[] = new Vara[5];
 	private int precoMunicao;
 	//imagem
-	Mercado(String nome, int x, int y, int z, int precoMunicao){
+	Mercado(String nome, int x, int y, int z, int precoMunicao, String imagem){
 		this.nome = nome;
 		this.x = x;
 		this.y = y;
 		this.z = z;
 		this.precoMunicao = precoMunicao;
+		this.imagem = imagem;
 	}
 	
 	public String getNome() {
 		return nome;
+	}
+	public String getImage() {
+		return imagem;
 	}
 	
 	public int getX() {

@@ -2,22 +2,28 @@ package pt.labfinal;
 
 public class Arma implements Item{
 	private String nome;
+	private String imagem;
 	private int preco;
 	private int municaoMax;
 	private int municaoAtual;
 	private int dano;
 	
 	//imagem
-	Arma(String nome, int preco, int municao, int dano){
+	Arma(String nome, int preco, int municao, int dano, String imagem){
 		this.nome = nome;
 		this.preco = preco;
 		this.municaoAtual = municao;
 		this.municaoMax = municao;
 		this.dano = dano;
+		this.imagem = imagem;
 	}
 	
 	public String getNome() {
 		return nome;
+	}
+	
+	public String getImage() {
+		return imagem;
 	}
 	
 	public int getPreco() {
