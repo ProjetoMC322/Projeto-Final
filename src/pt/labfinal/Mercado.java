@@ -122,8 +122,9 @@ public class Mercado implements Componente{
 			//ammo
 			if(b.getDinheiro() > precoMunicao) {
 				b.adicionaMunicao();
+				b.gastaDinheiro(precoMunicao);
 			}else {
-				//falta
+				//falta 
 			}
 			entra(b);
 		}else {
