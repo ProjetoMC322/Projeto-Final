@@ -1,0 +1,42 @@
+I,Capanga do Cartel,4,5,0,10,2,linkimagem
+I,Capanga do Cartel,8,2,0,10,2,linkimagem
+I,Capanga do Cartel,8,8,0,10,2,linkimagem
+C,Saida,9,9,0,linkimagem
+O,9,4,0,linkimagem
+M,0,5,0,linkimagem
+I,Pirata caribenho,7,8,1,15,2,linkimagem
+I,Pirata caribenho,8,2,1,15,2,linkimagem
+I,Pirata caribenho,2,9,1,15,2,linkimagem
+I,Pirata caribenho,0,7,1,15,2,linkimagem
+I,Capitao,2,7,1,20,5,linkimagem
+C,Entrada,9,0,1,linkimagem
+C,Saida,0,9,1,linkimagem
+O,7,9,1,linkimagem
+M,0,5,1,linkimagem
+I,Agente da Gestapo,5,4,2,20,3,linkimagem
+I,Agente da Gestapo,5,7,2,20,3,linkimagem
+I,Agente da Gestapo,5,9,2,20,3,linkimagem
+I,Tenente,8,8,2,25,8,linkimagem
+C,Entrada,0,0,2,linkimagem
+C,Saida,9,9,2,linkimagem
+O,9,0,2,linkimagem
+M,0,9,2,linkimagem
+I,Espiao russo,2,7,3,15,3,linkimagem
+I,Espiao russo,3,8,3,15,3,linkimagem
+I,Espiao russo,2,6,3,15,3,linkimagem
+I,Espiao russo,4,8,3,15,3,linkimagem
+I,Espiao russo,3,7,3,15,3,linkimagem
+I,Comandante Maximov,2,8,3,25,10,linkimagem
+C,Entrada,0,0,3,linkimagem
+C,Saida,9,9,3,linkimagem
+O,0,0,3,linkimagem
+M,0,2,3,linkimagem
+I,Soldado Siberiano,0,9,4,40,8,linkimagem
+I,Soldado Siberiano,9,0,4,40,8,linkimagem
+I,Soldado Siberiano,8,8,4,40,8,linkimagem
+C,Entrada,0,0,4,linkimagem
+C,Saida,9,9,4,linkimagem
+O,9,4,4,linkimagem
+M,4,9,4,linkimagem
+I,Godzilla,5,8,5,400,10,linkimagem
+C,Entrada,5,0,5,linkimagem

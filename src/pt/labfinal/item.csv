@@ -1,0 +1,46 @@
+Golfo do Mexico,linkimagem
+P,30,Bota furada,1,linkimagem
+P,55,Sardinha,5,linkimagem
+P,80,Camarao,10,linkimagem
+P,100,Luciano-do-golfo,25,linkimagem
+AR,Glock Rajada,50,30,3,linkimagem,3
+V,Vara de pesca semi-nova,20,15,linkimagem
+Caribe,linkimagem
+P,25,Sacola Plastica,0,linkimagem
+P,45,Siri,7,linkimagem
+P,65,Baiacu,15,linkimagem
+P,80,Lagosta,25,linkimagem
+P,100,Cavalo-marinho,50,linkimagem
+AC,Canhao enferrujado,100,8,12,linkimagem
+A,Beretta,75,20,10,linkimagem
+V,Vara de pesca nova,50,30,linkimagem
+Oceano Atlantico Norte,linkimagem
+P,30,Pneu,0,linkimagem
+P,45,Peixinho Dourado,10,linkimagem
+P,60,Namorado,15,linkimagem
+P,80,Robalo,20,linkimagem
+P,95,Raia Manta,60,linkimagem
+P,100,Esturjao,200,linkimagem
+AE,Escopeta cano duplo,300,6,30,linkimagem
+V,Vara de pesca com molinete,100,50,linkimagem
+Oceano Artico,linkimagem
+P,30,Bloco de gelo,0,linkimagem
+P,45,Carpa,10,linkimagem
+P,60,Camarao Pistola,30,linkimagem
+P,80,Bacalhau,60,linkimagem
+P,95,Salmao,100,linkimagem
+P,100,Magikarp shiny,250,linkimagem
+AP,Bazuca,800,5,20,linkimagem
+AR,AK Rajada,500,60,5,linkimagem,4
+AE,Escopeta de alavanca,500,8,60,linkimagem
+VS,Vara da sorte,750,25,linkimagem,15
+Mar Siberiano,linkimagem
+P,35,Garrafa quebrada,0,linkimagem
+P,70,Esturjao-siberiano,50,linkimagem
+P,95,Atum,120,linkimagem
+P,100,Pinguim,350,linkimagem
+AP,Bazuca do czar,1600,6,30,linkimagem
+AC,Canhao de guerra,1000,10,25,linkimagem
+Mar do Japao,linkimagem
+P,80,Canudinho plastico,0,linkimagem
+P,100,Pescada branca,180,linkimagem

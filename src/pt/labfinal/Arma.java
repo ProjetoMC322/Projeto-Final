@@ -5,8 +5,8 @@ public class Arma implements Item{
 	private String imagem;
 	private int preco;
 	private int municaoMax;
-	private int municaoAtual;
-	private int dano;
+	protected int municaoAtual;
+	protected int dano;
 	
 	//imagem
 	Arma(String nome, int preco, int municao, int dano, String imagem){
