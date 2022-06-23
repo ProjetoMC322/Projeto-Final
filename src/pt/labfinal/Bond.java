@@ -91,6 +91,7 @@ public class Bond implements Componente{
 	}
 	
 	public void pescar(Mapa mapa) {
+		 System.out.println("Camada2");
 		mala.addPeixe(mala.getVara(0).pescar(mapa));
 	}
 	

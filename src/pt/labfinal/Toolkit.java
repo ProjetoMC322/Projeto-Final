@@ -9,12 +9,13 @@ public class Toolkit {
 	
 	   public static String DIRETORIO = System.getProperty("user.dir") +
 			                            "/src/pt/labfinal/";
-	   private static BufferedReader mapStr;
+	   private static BufferedReader itemStr;
+	   private static BufferedReader componentesStr;
 	   
-	   public static String[][]retrieveMap() {
-		   String mapFile =  DIRETORIO + "map.csv";
+	   public static String[][]retrieveItems() {
+		   String mapFile =  DIRETORIO + "item.csv";
 		   try {
-			  mapStr = new BufferedReader(
+			  itemStr = new BufferedReader(
 		               new FileReader(mapFile));
 		      } catch(IOException erro){
 		         erro.printStackTrace();
@@ -22,13 +23,37 @@ public class Toolkit {
 		   	
 		   Vector<String[]> v = new Vector<String[]>();
 		      try {
-		         String line = mapStr.readLine();
+		         String line = itemStr.readLine();
 		         while (line != null) {
 		            String ln[]  = line.split(",");
 		            v.add(ln);
-		            line = mapStr.readLine();
+		            line = itemStr.readLine();
 		         }
-		         mapStr.close();
+		         itemStr.close();
+		      } catch (Exception erro) {
+		         erro.printStackTrace();
+		      }
+		      return (String[][])v.toArray(new String[v.size()][]);
+	   }
+	   
+	   public static String[][]retrieveComponents() {
+		   String mapFile =  DIRETORIO + "componentes.csv";
+		   try {
+			  componentesStr = new BufferedReader(
+		               new FileReader(mapFile));
+		      } catch(IOException erro){
+		         erro.printStackTrace();
+		      }
+		   	
+		   Vector<String[]> v = new Vector<String[]>();
+		      try {
+		         String line = componentesStr.readLine();
+		         while (line != null) {
+		            String ln[]  = line.split(",");
+		            v.add(ln);
+		            line = componentesStr.readLine();
+		         }
+		         componentesStr.close();
 		      } catch (Exception erro) {
 		         erro.printStackTrace();
 		      }

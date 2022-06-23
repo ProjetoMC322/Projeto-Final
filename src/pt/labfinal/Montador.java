@@ -9,17 +9,39 @@ public class Montador {
 	public void montaMapa(String arquivoComponentes[][], String arquivoItens[][]) {
 		Mar novo = new Mar(arquivoItens[0][0], arquivoItens[0][1]);
 		for(int i = 0; i<arquivoItens.length; i++) {
-			if(arquivoItens[i].length == 2) {
+			if(arquivoItens[i].length == 2 && i>0) {
+				mapa.adicionaMar(novo);
 				novo = new Mar(arquivoItens[i][0], arquivoItens[i][1]);
-			}else if(arquivoComponentes[i][0].equals("A")){
+			}else if(arquivoItens[i][0].equals("A")){
 				novo.adicionaArma(new Arma(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
-						Integer.parseInt(arquivoComponentes[i][3]) , Integer.parseInt(arquivoComponentes[i][4]),
+						Integer.parseInt(arquivoItens[i][3]) , Integer.parseInt(arquivoItens[i][4]),
 						arquivoItens[i][5]));
-			}else if(arquivoComponentes[i][0].equals("V")){
+			}else if(arquivoItens[i][0].equals("AC")){
+				novo.adicionaArma(new ArmaCanhao(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
+						Integer.parseInt(arquivoItens[i][3]) , Integer.parseInt(arquivoItens[i][4]),
+						arquivoItens[i][5]));
+			}else if(arquivoItens[i][0].equals("AE")){
+				novo.adicionaArma(new ArmaEscopeta(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
+						Integer.parseInt(arquivoItens[i][3]) , Integer.parseInt(arquivoItens[i][4]),
+						arquivoItens[i][5]));
+			}else if(arquivoItens[i][0].equals("AP")){
+				novo.adicionaArma(new ArmaRPG(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
+						Integer.parseInt(arquivoItens[i][3]) , Integer.parseInt(arquivoItens[i][4]),
+						arquivoItens[i][5]));
+			}else if(arquivoItens[i][0].equals("AR")){
+				novo.adicionaArma(new ArmaRajada(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
+						Integer.parseInt(arquivoItens[i][3]) , Integer.parseInt(arquivoItens[i][4]),
+						arquivoItens[i][5], Integer.parseInt(arquivoItens[i][6])));
+			}else if(arquivoItens[i][0].equals("V")){
 				novo.adicionaVara(new Vara(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
-						Integer.parseInt(arquivoComponentes[i][3]), arquivoItens[i][4]));
+						Integer.parseInt(arquivoItens[i][3]), arquivoItens[i][4]));
 	
-			}else if(arquivoComponentes[i][0].equals("P")){
+			}else if(arquivoItens[i][0].equals("VS")){
+				novo.adicionaVara(new VaraSorte(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
+						Integer.parseInt(arquivoItens[i][3]), arquivoItens[i][4],
+						Integer.parseInt(arquivoItens[i][5])));
+	
+			}else if(arquivoItens[i][0].equals("P")){
 				novo.adicionaPeixe(new Peixe(arquivoItens[i][2], Integer.parseInt(arquivoItens[i][3]),
 						arquivoItens[i][4]), Integer.parseInt(arquivoItens[i][1]));
 			}
@@ -33,6 +55,7 @@ public class Montador {
 				b.setZ(Integer.parseInt(arquivoComponentes[i][4]));
 				mapa.conecta(b);
 			}else if(arquivoComponentes[i][0].equals("I")) {
+
 				mapa.conecta(new Inimigo(arquivoComponentes[i][1], Integer.parseInt(arquivoComponentes[i][2]), 
 						Integer.parseInt(arquivoComponentes[i][3]), Integer.parseInt(arquivoComponentes[i][4]),
 						Integer.parseInt(arquivoComponentes[i][5]), Integer.parseInt(arquivoComponentes[i][6]),

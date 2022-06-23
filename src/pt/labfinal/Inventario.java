@@ -25,6 +25,7 @@ public class Inventario {
 		}
 	}
 	public Vara getVara(int index) {
+		System.out.println("Camada3");
 		return varas[index];
 	}
 	public void addVara(Vara nova) {
@@ -39,6 +40,7 @@ public class Inventario {
 		return peixes[index];
 	}
 	public void addPeixe(Peixe novo) {
+		System.out.println("\n\n" + novo.getNome());
 		for(int i = 0; i<peixes.length; i++) {
 			if(peixes[i] == null) {
 				peixes[i] = novo;

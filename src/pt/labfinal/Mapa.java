@@ -35,6 +35,7 @@ public class Mapa {
 	}
     
     public Peixe pescar(int bonus) {
+    	System.out.println("Camada5");
     	return mares[marAtivo].pescar(bonus);
     }
     
