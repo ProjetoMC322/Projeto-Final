@@ -74,7 +74,10 @@ public class Celula {
 		for(int i = 0; i<nComponentes; i++) {
 			if(c == 'i') {
 				if(componentes[i] instanceof Inimigo) {
-					return true;
+					if(componentes[i].getHP() > 0) {
+						return true;
+					}
+					return false;
 				}
 			}else if(c == 'm') {
 				if(componentes[i] instanceof Mercado) {
@@ -105,6 +108,6 @@ public class Celula {
 				return;
 			}
 		}
-		//throw error
+		//dont throw error
 	}
 }

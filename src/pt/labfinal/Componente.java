@@ -4,6 +4,7 @@ public interface Componente {
 	public int getX();
 	public int getY();
 	public int getZ();
+	public int getHP();
 	public void setX(int novo);
 	public void setY(int novo);
 	public void setZ(int novo);

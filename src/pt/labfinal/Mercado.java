@@ -36,6 +36,9 @@ public class Mercado implements Componente{
 	public int getZ() {
 		return z;
 	};
+	public int getHP() {
+		return 0;
+	};
 	public void setX(int novo) {
 		this.x = novo;
 	};
