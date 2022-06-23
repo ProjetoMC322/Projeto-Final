@@ -57,4 +57,8 @@ public class Mapa {
     public void entra(int x, int y, int z, Bond b) {
     	mares[z].entra(x, y, b);
     }
+    
+    public void remove(String nome, int x, int y) {
+		mares[marAtivo].remove(nome, x, y);
+    }
 }

@@ -32,9 +32,25 @@ public class Resposta {
 	
 		}
 	}
+	public void gameover() {
+		
+		
+	}
 	
 	public void tick() {
-		//afunda inimigo
+		if (bond.getHP() <= 0) {
+			gameover();
+		}
+		
+		
+		for(int i = 0; i<inimigosRestantes.length; i++) {
+			if(inimigosRestantes[i] == null) {
+				break;
+			}else if(inimigosRestantes[i].getHP() <= 0){
+				mapa.remove("inimigo", inimigosRestantes[i].getX(), inimigosRestantes[i].getY());
+			}
+		}
+		
 		for(int i = 0; i<correntesMaritmas.length; i++) {
 			if(correntesMaritmas[i] == null) {
 				break;
@@ -57,15 +73,23 @@ public class Resposta {
 				if(((Math.abs(inimigosRestantes[i].getX() - bond.getX()))) >= 
 						((Math.abs(inimigosRestantes[i].getY() - bond.getY())))){
 							if((inimigosRestantes[i].getX() - bond.getX()) > 0) {
-								inimigosRestantes[i].andar("w", mapa);
+								if(!(mapa.checarInimigo(inimigosRestantes[i].getX()-1,inimigosRestantes[i].getY()))) {
+										inimigosRestantes[i].andar("w", mapa);
+								}
 							}else if((inimigosRestantes[i].getX() - bond.getX()) < 0) {
-								inimigosRestantes[i].andar("s", mapa);
+								if(!(mapa.checarInimigo(inimigosRestantes[i].getX()+1,inimigosRestantes[i].getY()))) {
+									inimigosRestantes[i].andar("s", mapa);
+								}
 							}
 				}else {
 					if((inimigosRestantes[i].getY() - bond.getY()) > 0) {
-						inimigosRestantes[i].andar("a", mapa);
+						if(!(mapa.checarInimigo(inimigosRestantes[i].getX(),inimigosRestantes[i].getY()-1))) {
+							inimigosRestantes[i].andar("a", mapa);
+						}
 					}else if((inimigosRestantes[i].getY() - bond.getY()) < 0) {
-						inimigosRestantes[i].andar("d", mapa);
+						if(!(mapa.checarInimigo(inimigosRestantes[i].getX(),inimigosRestantes[i].getY()+1))) {
+							inimigosRestantes[i].andar("d", mapa);
+					}
 					}
 				}
 			}

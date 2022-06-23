@@ -119,7 +119,7 @@ public class Mar {
 			celulas[x][y].removeComponente(nome);
 		}
 	}
-	
+	//passar classe no remove
 	public Peixe pescar() {
 		Random rand = new Random();
 		int num = rand.nextInt(101), aux = 0;
