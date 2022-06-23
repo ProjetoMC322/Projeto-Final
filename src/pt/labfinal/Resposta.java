@@ -13,6 +13,7 @@ public class Resposta {
 	private Corrente correntesMaritmas[] = new Corrente[15];
 	private Mapa mapa = Mapa.getInstance();
 	private Bond bond = Bond.getInstance();
+	private Inimigo godzilla;
 	
 	public void adicionaInimigos(Inimigo novo) {
 		for(int i = 0; i < inimigosRestantes.length; i++) {
@@ -32,15 +33,18 @@ public class Resposta {
 	
 		}
 	}
-	public void gameover() {
-		
-		
+	
+	public void setGodzilla(Inimigo novo) {
+		godzilla = novo;
 	}
 	
 	public void tick() {
 		if (bond.getHP() <= 0) {
-			gameover();
+			bond.perdeuJogo();
+		}else if(godzilla.getHP() <= 0) {
+			bond.ganhouJogo();
 		}
+
 		
 		
 		for(int i = 0; i<inimigosRestantes.length; i++) {

@@ -5,6 +5,7 @@ public class Mapa {
 	private static final Mapa instance = new Mapa ();
 	private Mar mares[] =  new Mar[6];
 	private int marAtivo = 0;
+	private Resposta resposta = Resposta.getInstance();
 	
 	private Mapa(){}
 
@@ -28,8 +29,13 @@ public class Mapa {
 		mares[c.getZ()].associaCelula(c, c.getX(), c.getY());
 	}
     
-    public Peixe pescar() {
-    	return mares[marAtivo].pescar();
+    public void conectaGodzilla(Inimigo c) {
+		conecta(c);
+		resposta.setGodzilla(c);
+	}
+    
+    public Peixe pescar(int bonus) {
+    	return mares[marAtivo].pescar(bonus);
     }
     
     public boolean checarInimigo(int x, int y) {

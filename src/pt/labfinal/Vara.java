@@ -4,7 +4,7 @@ public class Vara implements Item{
 	private String nome, imagem;
 	private int preco;
 	private int durabilidadeMax;
-	private int durabilidadeAtual;
+	protected int durabilidadeAtual;
 	
 	//imagem
 	Vara(String nome, int preco, int durabilidade, String imagem){
@@ -39,7 +39,7 @@ public class Vara implements Item{
 			return null;
 		}else {
 			durabilidadeAtual--;
-			return mapa.pescar();
+			return mapa.pescar(0);
 		}
 	}
 }

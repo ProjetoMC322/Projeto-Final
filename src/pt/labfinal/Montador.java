@@ -37,6 +37,12 @@ public class Montador {
 						Integer.parseInt(arquivoComponentes[i][3]), Integer.parseInt(arquivoComponentes[i][4]),
 						Integer.parseInt(arquivoComponentes[i][5]), Integer.parseInt(arquivoComponentes[i][6]),
 						arquivoComponentes[i][7]));
+			}else if(arquivoComponentes[i][0].equals("IG")) {
+				mapa.conectaGodzilla(new Inimigo(arquivoComponentes[i][1], Integer.parseInt(arquivoComponentes[i][2]), 
+						Integer.parseInt(arquivoComponentes[i][3]), Integer.parseInt(arquivoComponentes[i][4]),
+						Integer.parseInt(arquivoComponentes[i][5]), Integer.parseInt(arquivoComponentes[i][6]),
+						arquivoComponentes[i][7]));
+						
 			}else if(arquivoComponentes[i][0].equals("M")) {
 				mapa.conecta(new Mercado("mercado", Integer.parseInt(arquivoComponentes[i][1]),
 						Integer.parseInt(arquivoComponentes[i][2]), Integer.parseInt(arquivoComponentes[i][3]),

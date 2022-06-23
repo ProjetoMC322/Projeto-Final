@@ -38,5 +38,5 @@ C,Entrada,0,0,4,linkimagem
 C,Saida,9,9,4,linkimagem
 O,9,4,4,linkimagem
 M,4,9,4,linkimagem
-I,Godzilla,5,8,5,400,10,linkimagem
+IG,Godzilla,5,8,5,400,10,linkimagem
 C,Entrada,5,0,5,linkimagem

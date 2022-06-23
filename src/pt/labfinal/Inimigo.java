@@ -3,7 +3,7 @@ package pt.labfinal;
 public class Inimigo implements Componente{
 	private String nome;
 	private String imagem;
-	private int x, y, z, hpMax, hpAtual, dano; 
+	protected int x, y, z, hpMax, hpAtual, dano; 
 	//imagem
 	Inimigo(String nome, int x, int y, int z, int hp, int dano, String imagem){
 		this.nome = nome;

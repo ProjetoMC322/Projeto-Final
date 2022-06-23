@@ -7,11 +7,29 @@ public class Bond implements Componente{
 	private String image = "naosei.png";
 	private int x, y, z, hpMax, hpAtual;
 	private Inventario mala = new Inventario();
+	private boolean ganhou = false;
+	private boolean perdeu = false;
 	
 	private Bond(){}
-
+	
     public static Bond getInstance(){
         return instance;
+    }
+    
+    public void ganhouJogo() {
+    	ganhou = true;
+    }
+    
+    public void perdeuJogo() {
+    	perdeu = true;
+    }
+    
+    public boolean verificaGanhou() {
+    	return ganhou;
+    }
+    
+    public boolean verificaPerdeu() {
+    	return perdeu;
     }
     
     public int getDinheiro() {

@@ -120,9 +120,10 @@ public class Mar {
 		}
 	}
 	//passar classe no remove
-	public Peixe pescar() {
+	public Peixe pescar(int bonus) {
 		Random rand = new Random();
 		int num = rand.nextInt(101), aux = 0;
+		num += bonus;
 		while(num>probabilidades[aux]) {
 			aux++;
 		}

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Controle {
 	Bond bond;
 	Mapa mapa;
-		
+
 	
 	Controle(){
 		this.bond = Bond.getInstance();
@@ -14,7 +14,7 @@ public class Controle {
 	
 	public void leComandos(String comandos) {
 		for(int i = 0; i < comandos.length(); i++) {
-			if (bond.getHP() > 0) {
+			if (bond.verificaGanhou() || bond.verificaPerdeu()) {
 				if (comandos.substring(i, i+1).equalsIgnoreCase("w") ||
 					comandos.substring(i, i+1).equalsIgnoreCase("a") ||	
 					comandos.substring(i, i+1).equalsIgnoreCase("s") ||
@@ -45,7 +45,7 @@ public class Controle {
 				
 			}else{
 				break;
-				//perdeu playboy
+				//perdeu (ou ganhou) playboy
 			}
 		}
 	}
