@@ -22,6 +22,7 @@ public class Individuo extends Componente{
 	}
 	
 	public void andar(String movimento, Mapa mapa) {
+		System.out.println("bond esta em" + x + y);
 		if (movimento.equalsIgnoreCase("w")) {
 			mapa.moveIndividuo(this.x, this.y, this.x - 1, this.y, this);
 			if(this.x > 0) {
