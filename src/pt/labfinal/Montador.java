@@ -10,6 +10,8 @@ public class Montador {
 		Mar novo = new Mar(arquivoItens[0][0], arquivoItens[0][1]);
 		for(int i = 0; i<arquivoItens.length; i++) {
 			if(arquivoItens[i].length == 2 && i>0) {
+			
+				
 				mapa.adicionaMar(novo);
 				novo = new Mar(arquivoItens[i][0], arquivoItens[i][1]);
 			}else if(arquivoItens[i][0].equals("A")){

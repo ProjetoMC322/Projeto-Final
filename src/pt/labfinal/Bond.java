@@ -8,7 +8,7 @@ public class Bond extends Individuo{
 	private boolean perdeu = false;
 	
 	private Bond(){
-		super("Bond", 0, 0, 0, 0, "bond.png");
+		super("Bond", 0, 0, 0, 15, "bond.png");
 	}
 	
     public static Bond getInstance(){
@@ -52,7 +52,6 @@ public class Bond extends Individuo{
 	}
 	
 	public void pescar(Mapa mapa) {
-		 System.out.println("Camada2");
 		mala.addPeixe(mala.getVara(0).pescar(mapa));
 	}
 	

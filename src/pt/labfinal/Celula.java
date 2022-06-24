@@ -72,6 +72,25 @@ public class Celula {
 		}
 	}
 	
+	public char getChar() {
+		if(nComponentes > 0) {
+			for(int i = 0; i<nComponentes; i++) {
+				
+				if(componentes[i] instanceof Bond) {
+					return 'B';
+				}if(componentes[i] instanceof Inimigo) {
+					return 'I';
+				}if(componentes[i] instanceof Mercado) {
+					return 'M';
+				}if(componentes[i] instanceof Oficina) {
+					return 'O';
+				}
+				
+			}
+		}
+		return '-';
+	}
+	
 	public boolean checar(char c) {
 		for(int i = 0; i<nComponentes; i++) {
 			if(c == 'i') {

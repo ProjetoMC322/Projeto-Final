@@ -6,12 +6,13 @@ public class Mar {
 	private String nome, imagem;
 	private Peixe peixes[] = new Peixe[5];
 	private int probabilidades[] = new int[5];
-	private Celula celulas[][] = new Celula[10][10];
+	private Celula celulas[][];
 	private Arma armas[] = new Arma[5];
 	private Vara varas[] = new Vara[5];
 	private Componente correntes[] = new Componente[3];
 	
 	Mar(String nome, String imagem) {
+		this.celulas = new Celula[10][10];
 		for(int i = 0; i<10; i++){
 			for(int j = 0; j<10; j++){
 				this.celulas[i][j] =  new Celula(i, j);
@@ -102,12 +103,25 @@ public class Mar {
 			if(saida) {
 				if(correntes[i].getNome().equals("Saida")) {
 					celulas[correntes[i].getX()][correntes[i].getY()].adicionaIndividuo(p);
+					p.setX(correntes[i].getX());
+					p.setX(correntes[i].getY());
 				}
 			}else {
 				if(correntes[i].getNome().equals("Entrada")) {
 					celulas[correntes[i].getX()][correntes[i].getY()].adicionaIndividuo(p);
+					p.setX(correntes[i].getX());
+					p.setX(correntes[i].getY());
 				}
 			}
+		}
+	}
+	
+	public void mostra() {
+		for(int i = 0; i<10; i++) {
+			for(int j = 0; j<10; j++) {
+				System.out.print(celulas[i][j].getChar());
+			}
+			System.out.println("");
 		}
 	}
 	
@@ -118,14 +132,14 @@ public class Mar {
 	}
 	//passar classe no remove
 	public Peixe pescar(int bonus) {
-		System.out.println("Camada6");
+		
 		Random rand = new Random();
 		int num = rand.nextInt(101), aux = 0;
 		num += bonus;
 		while(num>probabilidades[aux]) {
 			aux++;
 		}
-		System.out.println("Camada7");
+		
 		return peixes[aux];
 	}
 	

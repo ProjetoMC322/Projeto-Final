@@ -5,10 +5,12 @@ import java.util.Scanner;
 public class Controle {
 	Bond bond;
 	Mapa mapa;
+	Resposta resposta;
 
 	
 	Controle(){
 		this.bond = Bond.getInstance();
+		this.resposta = Resposta.getInstance();
 		this.mapa = Mapa.getInstance();
 		bond.adicionaArma(new Arma("nome", 100, 100, 100, "image"));
 		bond.adicionaVara(new Vara("nome", 100, 100, "image"));
@@ -47,7 +49,7 @@ public class Controle {
 				else {
 					System.out.println("Tecla invalida!");
 				}
-				
+				resposta.tick();
 			}else{
 				break;
 				//perdeu (ou ganhou) playboy

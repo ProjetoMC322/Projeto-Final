@@ -6,9 +6,9 @@ public class Resposta {
 	
 	private static final Resposta instance = new Resposta();
 	private Inimigo inimigosRestantes[]  = new Inimigo[30];
-	private Corrente correntesMaritmas[] = new Corrente[15];
-	private Mapa mapa = Mapa.getInstance();
-	private Bond bond = Bond.getInstance();
+	private Componente correntesMaritmas[] = new Componente[15];
+	private Mapa mapa;
+	private Bond bond;
 	private Inimigo godzilla;
 	Resposta(){}
 	public static Resposta getInstance(){
@@ -24,9 +24,10 @@ public class Resposta {
 		}
 	}
 	
-	public void adicionaCorrente(Corrente novo) {
+	public void adicionaCorrente(Componente novo) {
 		for(int i = 0; i < correntesMaritmas.length; i++) {
 			if(correntesMaritmas[i] == null) {
+				
 				correntesMaritmas[i] = novo;
 				return;
 			}
@@ -35,10 +36,13 @@ public class Resposta {
 	}
 	
 	public void setGodzilla(Inimigo novo) {
+		mapa = Mapa.getInstance();
+		bond = Bond.getInstance();
 		godzilla = novo;
 	}
 	
 	public void tick() {
+		mapa.mostraMapa();
 		if (bond.getHP() <= 0) {
 			bond.perdeuJogo();
 		}else if(godzilla.getHP() <= 0) {
@@ -59,11 +63,15 @@ public class Resposta {
 			if(correntesMaritmas[i] == null) {
 				break;
 			}
-			if(correntesMaritmas[i].getZ() == bond.getZ() || correntesMaritmas[i].getX() == bond.getX() ||
-					correntesMaritmas[i].getY() == bond.getY()) {
+			//System.out.println("compara conrrente " + correntesMaritmas[i].getX() + " "  + bond.getX()+ " "  + bond.getY() + correntesMaritmas[i].getY() + " " + correntesMaritmas[i].getZ() + " "  + bond.getZ());
+			if((correntesMaritmas[i].getZ() == bond.getZ()) && (correntesMaritmas[i].getX() == bond.getX()) &&
+					(correntesMaritmas[i].getY() == bond.getY())) {
+				//System.out.println("1");
 				if(correntesMaritmas[i].getNome().equals("Saida")) {
+					//System.out.println("12");
 					 bond.andar("z", mapa);
 				}else if(correntesMaritmas[i].getNome().equals("Entrada")) {
+					//System.out.println("14");
 					 bond.andar("x", mapa);
 				}
 			}

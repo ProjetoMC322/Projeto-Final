@@ -26,7 +26,14 @@ public class Mapa {
     }
     
     public void conecta(Componente c) {
+    	if(c instanceof Corrente) {
+    		resposta.adicionaCorrente(c);
+    	}
+    	System.out.println("associando " + c.getNome() + c.getZ());
 		mares[c.getZ()].associaCelula(c, c.getX(), c.getY());
+		for(int i = 0; i<6; i++) {
+			mares[i].mostra();
+		}
 	}
     
     public void conectaGodzilla(Inimigo c) {
@@ -37,6 +44,10 @@ public class Mapa {
     public Peixe pescar(int bonus) {
     	System.out.println("Camada5");
     	return mares[marAtivo].pescar(bonus);
+    }
+    
+    public void mostraMapa() {
+    	mares[marAtivo].mostra();
     }
     
     public boolean checarInimigo(int x, int y) {
@@ -55,8 +66,12 @@ public class Mapa {
     	mares[marAtivo].remove(i, i.getX(), i.getY());
     	if(saida) {
     		mares[marAtivo-1].colocaIndividuo(i, saida);
+    		marAtivo--;
+    		i.setZ(marAtivo);
     	}else {
     		mares[marAtivo+1].colocaIndividuo(i, saida);
+    		marAtivo++;
+    		i.setZ(marAtivo);
     		//erros
     	}
     }
