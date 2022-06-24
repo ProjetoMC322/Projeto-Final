@@ -9,6 +9,7 @@ public class Bond extends Individuo{
 	
 	private Bond(){
 		super("Bond", 0, 0, 0, 15, "bond.png");
+		mala.addArma(new Arma("s", 100, 100, 100, "image"));
 	}
 	
     public static Bond getInstance(){

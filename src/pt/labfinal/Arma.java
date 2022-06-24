@@ -39,6 +39,7 @@ public class Arma implements Item{
 	}
 	
 	public void atirar(Mapa mapa, String movimento, int x, int y) {
+		System.out.println("atirando com arma: " + nome + " de dano " + dano);
 		if(municaoAtual < 1) {
 			//erro
 			return;
@@ -68,6 +69,7 @@ public class Arma implements Item{
 		}else if (movimento.equalsIgnoreCase("k")) {
 			while(x<9) {
 				if(mapa.checarInimigo(x+1, y)){
+					System.out.println("Achamos inimigo em:" + x+1 + " " + y );
 					mapa.causarDano(x+1, y, dano);
 					municaoAtual--;
 					return;

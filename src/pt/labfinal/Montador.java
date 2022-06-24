@@ -2,52 +2,57 @@ package pt.labfinal;
 
 public class Montador {
 	private Mapa mapa;
+	Mar novo[] = new Mar[6];
 	Montador(){
 		mapa = Mapa.getInstance();
 	}
 	
 	public void montaMapa(String arquivoComponentes[][], String arquivoItens[][]) {
-		Mar novo = new Mar(arquivoItens[0][0], arquivoItens[0][1]);
+		int aux = 0;
+		novo[aux] = new Mar(arquivoItens[0][0], arquivoItens[0][1]);
 		for(int i = 0; i<arquivoItens.length; i++) {
 			if(arquivoItens[i].length == 2 && i>0) {
 			
 				
-				mapa.adicionaMar(novo);
-				novo = new Mar(arquivoItens[i][0], arquivoItens[i][1]);
+				mapa.adicionaMar(novo[aux]);
+				aux++;
+				novo[aux] = new Mar(arquivoItens[i][0], arquivoItens[i][1]);
+				
 			}else if(arquivoItens[i][0].equals("A")){
-				novo.adicionaArma(new Arma(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
+				novo[aux].adicionaArma(new Arma(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
 						Integer.parseInt(arquivoItens[i][3]) , Integer.parseInt(arquivoItens[i][4]),
 						arquivoItens[i][5]));
 			}else if(arquivoItens[i][0].equals("AC")){
-				novo.adicionaArma(new ArmaCanhao(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
+				novo[aux].adicionaArma(new ArmaCanhao(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
 						Integer.parseInt(arquivoItens[i][3]) , Integer.parseInt(arquivoItens[i][4]),
 						arquivoItens[i][5]));
 			}else if(arquivoItens[i][0].equals("AE")){
-				novo.adicionaArma(new ArmaEscopeta(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
+				novo[aux].adicionaArma(new ArmaEscopeta(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
 						Integer.parseInt(arquivoItens[i][3]) , Integer.parseInt(arquivoItens[i][4]),
 						arquivoItens[i][5]));
 			}else if(arquivoItens[i][0].equals("AP")){
-				novo.adicionaArma(new ArmaRPG(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
+				novo[aux].adicionaArma(new ArmaRPG(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
 						Integer.parseInt(arquivoItens[i][3]) , Integer.parseInt(arquivoItens[i][4]),
 						arquivoItens[i][5]));
 			}else if(arquivoItens[i][0].equals("AR")){
-				novo.adicionaArma(new ArmaRajada(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
+				novo[aux].adicionaArma(new ArmaRajada(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
 						Integer.parseInt(arquivoItens[i][3]) , Integer.parseInt(arquivoItens[i][4]),
 						arquivoItens[i][5], Integer.parseInt(arquivoItens[i][6])));
 			}else if(arquivoItens[i][0].equals("V")){
-				novo.adicionaVara(new Vara(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
+				novo[aux].adicionaVara(new Vara(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
 						Integer.parseInt(arquivoItens[i][3]), arquivoItens[i][4]));
 	
 			}else if(arquivoItens[i][0].equals("VS")){
-				novo.adicionaVara(new VaraSorte(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
+				novo[aux].adicionaVara(new VaraSorte(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),
 						Integer.parseInt(arquivoItens[i][3]), arquivoItens[i][4],
 						Integer.parseInt(arquivoItens[i][5])));
 	
 			}else if(arquivoItens[i][0].equals("P")){
-				novo.adicionaPeixe(new Peixe(arquivoItens[i][2], Integer.parseInt(arquivoItens[i][3]),
+				novo[aux].adicionaPeixe(new Peixe(arquivoItens[i][2], Integer.parseInt(arquivoItens[i][3]),
 						arquivoItens[i][4]), Integer.parseInt(arquivoItens[i][1]));
 			}
 		}
+		mapa.adicionaMar(novo[aux]);
 		
 		for(int i = 0; i<arquivoComponentes.length; i++) {
 			if(arquivoComponentes[i][0].equals("B")) {
