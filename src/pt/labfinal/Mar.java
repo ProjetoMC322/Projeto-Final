@@ -61,11 +61,13 @@ public class Mar {
 	
 	public void associaCelula(Componente c, int x, int y) {
 		if((x < 10)&&(y < 10)&&(x >= 0)&&(y >= 0)) {
-			celulas[x][y].adicionaComponente(c);
+			
 			if(c instanceof Corrente) {
 				for(int i = 0; i<correntes.length; i++) {
 					if(correntes[i] == null) {
+						System.out.println(c.getNome());
 						correntes[i] = c;
+						celulas[x][y].adicionaComponente(c);
 						return;
 					}
 				}
@@ -85,38 +87,52 @@ public class Mar {
 					}
 				}
 			}
+			celulas[x][y].adicionaComponente(c);
 		}
 	}
 	
-	public void moveIndividuo(int xa, int ya, int xd, int yd, Individuo i) {
+	public boolean moveIndividuo(int xa, int ya, int xd, int yd, Individuo i) {
 		if((xd > 9)||(yd > 9)||(xd < 0)||(yd < 0)) {
 			System.out.println("A célula que você quer acessar é fora do mar");
 			//throw exception
-			return;
+			return false;
 		}
-		celulas[xa][ya].removeComponente(i);
-		celulas[xd][yd].adicionaIndividuo(i);
+		
+		if(celulas[xd][yd].adicionaIndividuo(i)) {
+			celulas[xa][ya].removeComponente(i);
+			return true;
+		}
+		return false;
 	}
 	
-	public void colocaIndividuo(Individuo p, boolean saida) {
+	public boolean colocaIndividuo(Individuo p, boolean saida) {
 		for(int i = 0; i<correntes.length; i++) {
 			if(saida) {
+				System.out.println(correntes[i].getNome().equals("Entrada"));
+				if(correntes[i].getNome().equals("Entrada")) {
+					System.out.println(correntes[i].getX() + " " + correntes[i].getY());
+					celulas[correntes[i].getX()][correntes[i].getY()].adicionaIndividuo(p);
+					p.setX(correntes[i].getX());
+					p.setY(correntes[i].getY());
+					return true;
+				}
+			}else {
+				System.out.println(correntes[i].getNome().equals("Saida"));
 				if(correntes[i].getNome().equals("Saida")) {
 					celulas[correntes[i].getX()][correntes[i].getY()].adicionaIndividuo(p);
 					p.setX(correntes[i].getX());
-					p.setX(correntes[i].getY());
-				}
-			}else {
-				if(correntes[i].getNome().equals("Entrada")) {
-					celulas[correntes[i].getX()][correntes[i].getY()].adicionaIndividuo(p);
-					p.setX(correntes[i].getX());
-					p.setX(correntes[i].getY());
+					p.setY(correntes[i].getY());
+					return true;
 				}
 			}
 		}
+		return false;
 	}
 	
+	
+	
 	public void mostra() {
+		
 		for(int i = 0; i<10; i++) {
 			for(int j = 0; j<10; j++) {
 				System.out.print(celulas[i][j].getChar());
@@ -127,6 +143,7 @@ public class Mar {
 	
 	public void remove(Componente c, int x, int y) {
 		if((x < 10)&&(y < 10)&&(x >= 0)&&(y >= 0)) {
+			System.out.println(" tentando remover o componente " + c.getNome());
 			celulas[x][y].removeComponente(c);
 		}
 	}

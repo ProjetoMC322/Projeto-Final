@@ -15,8 +15,11 @@ public class Mapa {
 	
     public void adicionaMar(Mar novo) {
     	for(int i = 0; i<mares.length; i++) {
+    		
+  
     		if(mares[i] == null) {
     			mares[i] = novo;
+    			return;
     		}
     	}
     }
@@ -29,11 +32,11 @@ public class Mapa {
     	if(c instanceof Corrente) {
     		resposta.adicionaCorrente(c);
     	}
-    	System.out.println("associando " + c.getNome() + c.getZ());
+    	if(c instanceof Inimigo) {
+    		resposta.adicionaInimigos((Inimigo)c);
+    	}
 		mares[c.getZ()].associaCelula(c, c.getX(), c.getY());
-		for(int i = 0; i<6; i++) {
-			mares[i].mostra();
-		}
+		
 	}
     
     public void conectaGodzilla(Inimigo c) {
@@ -58,20 +61,28 @@ public class Mapa {
     	mares[marAtivo].causarDano(x, y, dano);
     }
     
-    public void moveIndividuo(int xa, int ya, int xd, int yd, Individuo i) {
-    	mares[marAtivo].moveIndividuo(xa, ya, xd, yd, i);
+    public boolean moveIndividuo(int xa, int ya, int xd, int yd, Individuo i) {
+    	return mares[marAtivo].moveIndividuo(xa, ya, xd, yd, i);
     }
     
-    public void sobeIndividuo(boolean saida, Individuo i) {
+    public boolean sobeIndividuo(boolean saida, Individuo i) {
     	mares[marAtivo].remove(i, i.getX(), i.getY());
     	if(saida) {
-    		mares[marAtivo-1].colocaIndividuo(i, saida);
-    		marAtivo--;
-    		i.setZ(marAtivo);
-    	}else {
-    		mares[marAtivo+1].colocaIndividuo(i, saida);
+    		
     		marAtivo++;
-    		i.setZ(marAtivo);
+    		System.out.println("esta aparecendo "+ marAtivo+" vezes");
+    		if(mares[marAtivo].colocaIndividuo(i, saida)) {
+    			//i.setZ(marAtivo);
+    			return true;
+    		}
+    		return false;
+    	}else {
+    		marAtivo--;
+    		if(mares[marAtivo].colocaIndividuo(i, saida)) {
+    			//i.setZ(marAtivo);
+    			return true;
+    		}
+    		return false;
     		//erros
     	}
     }

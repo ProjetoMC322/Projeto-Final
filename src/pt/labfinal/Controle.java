@@ -14,6 +14,7 @@ public class Controle {
 		this.mapa = Mapa.getInstance();
 		bond.adicionaArma(new Arma("nome", 100, 100, 100, "image"));
 		bond.adicionaVara(new Vara("nome", 100, 100, "image"));
+		mapa.conecta(bond);
 	}
 	
 	public void leComandos(String comandos) {

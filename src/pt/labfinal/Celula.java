@@ -10,6 +10,11 @@ public class Celula {
 	}
 	
 	public void adicionaComponente(Componente novo) {
+		System.out.println("asssdasdasociand " + novo.getClass());
+		if(novo instanceof Corrente) {
+			System.out.println("asssdasdasociand " + novo.getClass());
+		}
+
 		if(novo instanceof Oficina || novo instanceof Mercado) {
 			for(int i = 0; i<nComponentes; i++) {
 				if(componentes[i] instanceof Oficina || componentes[i] instanceof Mercado) {
@@ -43,14 +48,20 @@ public class Celula {
 			nComponentes++;
 			return;
 		}
+		componentes[nComponentes] = novo;
+		nComponentes++;
+		
 		//erro
 		return;
 	}
 	
 	public void removeComponente(Componente c) {
+		System.out.println("removendo compo: " + c.getNome());
 		for(int i = 0; i<nComponentes; i++) {
+			
 			if(componentes[i].equals(c)) {
 				for(int j = i; j<nComponentes-1 ; j++) {
+					System.out.println("craca: " + componentes[j]);
 					componentes[j] = componentes[j+1];
 				}
 				break;
@@ -58,21 +69,24 @@ public class Celula {
 				//throw error
 			}
 		}
-		componentes[nComponentes] = null;
 		nComponentes--;
+		componentes[nComponentes] = null;
+		System.out.println(nComponentes);
 	}
 	
-	public void adicionaIndividuo(Individuo i) {
+	public boolean adicionaIndividuo(Individuo i) {
 		if(nComponentes > 0 && componentes[nComponentes-1] instanceof Individuo) {
 			//parado!
-			return;
+			return false;
 		}else {
 			componentes[nComponentes] = i;
 			nComponentes++;
+			return true;
 		}
 	}
 	
 	public char getChar() {
+		
 		if(nComponentes > 0) {
 			for(int i = 0; i<nComponentes; i++) {
 				
@@ -84,6 +98,8 @@ public class Celula {
 					return 'M';
 				}if(componentes[i] instanceof Oficina) {
 					return 'O';
+				}if(componentes[i] instanceof Componente) {
+					return 'C';
 				}
 				
 			}
