@@ -47,25 +47,27 @@ public class Celula {
 		return;
 	}
 	
-	public void removeComponente(String nome) {
+	public void removeComponente(Componente c) {
 		for(int i = 0; i<nComponentes; i++) {
-			if(componentes[i].getNome().equals(nome)) {
+			if(componentes[i].equals(c)) {
 				for(int j = i; j<nComponentes-1 ; j++) {
 					componentes[j] = componentes[j+1];
 				}
 				break;
+			}else {
+				//throw error
 			}
 		}
 		componentes[nComponentes] = null;
 		nComponentes--;
 	}
 	
-	public void adicionaBond(Bond b) {
-		if(nComponentes > 0 && componentes[nComponentes-1] instanceof Inimigo) {
-			//decidir o que fazer
+	public void adicionaIndividuo(Individuo i) {
+		if(nComponentes > 0 && componentes[nComponentes-1] instanceof Individuo) {
+			//parado!
 			return;
 		}else {
-			componentes[nComponentes] = b;
+			componentes[nComponentes] = i;
 			nComponentes++;
 		}
 	}

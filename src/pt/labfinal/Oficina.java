@@ -2,67 +2,15 @@ package pt.labfinal;
 
 import java.util.Scanner;
 
-public class Oficina implements Componente{
-	private String nome, imagem;
-	private int x, y, z, cura, precoCura, melhoria, precoMelhoria;
+public class Oficina extends Componente{
+	private int cura, precoCura, melhoria, precoMelhoria;
 	//imagem
 	Oficina(String nome, int x, int y, int z, int cura, int precoCura, int melhoria, int precoMelhoria, String imagem){
-		this.nome = nome;
-		this.x = x;
-		this.y = y;
-		this.z = z;
+		super(nome, x, y, z, imagem);
 		this.cura = cura;
 		this.precoCura = precoCura;
 		this.melhoria = melhoria;
 		this.precoMelhoria = precoMelhoria;
-		this.imagem = imagem;
-	}
-	
-	public int getX() {
-		return x;
-	};
-	
-	public int getY() {
-		return y;
-	};
-	public int getZ() {
-		return z;
-	};
-	public int getHP() {
-		return 0;
-	};
-	public void setX(int novo) {
-		this.x = novo;
-	};
-	public void setY(int novo) {
-		this.y = novo;
-	}
-	public void setZ(int novo) {
-		this.z = novo;
-	};
-	
-	public String getNome() {
-		return nome;
-	}
-	public String getImage() {
-		return imagem;
-	}
-	public void andar(String movimento, Mapa mapa) {
-		return;
-	}
-	
-	public void atirar(){
-		return;
-	}
-	
-	public void alteraHP(int novo) {
-		return;
-	}
-	public void adicionaArma(Arma a) {
-		return;
-	}
-	public void adicionaVara(Vara v) {
-		return;
 	}
 	
 	public void entra(Bond b) {
@@ -101,6 +49,5 @@ public class Oficina implements Componente{
 		String command = keyboard.nextLine();
 		keyboard.close();
 		return command;
-	
 	}
 }

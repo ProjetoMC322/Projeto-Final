@@ -47,16 +47,16 @@ public class Mapa {
     	mares[marAtivo].causarDano(x, y, dano);
     }
     
-    public void moveBond(int xa, int ya, int xd, int yd, Bond p) {
-    	mares[marAtivo].moveBond(xa, ya, xd, yd, p);
+    public void moveIndividuo(int xa, int ya, int xd, int yd, Individuo i) {
+    	mares[marAtivo].moveIndividuo(xa, ya, xd, yd, i);
     }
     
-    public void sobeBond(boolean saida, Bond p) {
-    	mares[marAtivo].remove("Bond", p.getX(), p.getY());
+    public void sobeIndividuo(boolean saida, Individuo i) {
+    	mares[marAtivo].remove(i, i.getX(), i.getY());
     	if(saida) {
-    		mares[marAtivo-1].colocaBond(p, saida);
+    		mares[marAtivo-1].colocaIndividuo(i, saida);
     	}else {
-    		mares[marAtivo+1].colocaBond(p, saida);
+    		mares[marAtivo+1].colocaIndividuo(i, saida);
     		//erros
     	}
     }
@@ -65,7 +65,7 @@ public class Mapa {
     	mares[z].entra(x, y, b);
     }
     
-    public void remove(String nome, int x, int y) {
-		mares[marAtivo].remove(nome, x, y);
+    public void remove(Componente c, int x, int y) {
+		mares[marAtivo].remove(c, x, y);
     }
 }

@@ -1,18 +1,74 @@
 package pt.labfinal;
 
-public interface Componente {
-	public int getX();
-	public int getY();
-	public int getZ();
-	public int getHP();
-	public void setX(int novo);
-	public void setY(int novo);
-	public void setZ(int novo);
-	public String getNome();
-	public String getImage();
-	public void andar(String movimento, Mapa mapa);
-	public void alteraHP(int valor);
-	public void adicionaArma(Arma novo);
-	public void adicionaVara(Vara novo);
-	public void entra(Bond b);
+public abstract class Componente{
+	protected int x, y, z;
+	protected String nome, imagem; 
+	
+	Componente(String nome, int x, int y, int z, String imagem){
+		this.nome = nome;
+		this.x = x;
+		this.y = y;
+		this.z = z;
+		this.imagem = imagem;
+	}
+	 
+	public int getX() {
+		return this.x;
+	}
+	
+	public int getY() {
+		return this.y;
+	}
+	
+	public int getZ() {
+		return this.z;
+	}
+	
+	public String getNome() {
+		return this.nome;
+	}
+	
+	public String getImage() {
+		return this.imagem;
+	}
+	
+	public int getHPMax() {
+		return 0;
+	}
+	
+	public int getHP() {
+		return 0;
+	}
+	
+	public void setX(int novo) {
+		this.x = novo;
+	}
+	
+	public void setY(int novo) {
+		this.y = novo;
+	}
+	
+	public void setZ(int novo) {
+		this.z = novo;
+	}
+	
+	public void andar(String movimento, Mapa mapa) {
+		return;
+	}
+	
+	public void alteraHP(int valor) {
+		return;
+	}
+	
+	public void adicionaArma(Arma novo) {
+		return;
+	}
+	
+	public void adicionaVara(Vara novo) {
+		return;
+	}
+	
+	public void entra(Bond b) {
+		return;
+	}
 }

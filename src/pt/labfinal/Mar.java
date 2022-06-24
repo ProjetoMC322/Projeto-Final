@@ -10,8 +10,7 @@ public class Mar {
 	private Arma armas[] = new Arma[5];
 	private Vara varas[] = new Vara[5];
 	private Componente correntes[] = new Componente[3];
-	//melhorias
-	//inimigos
+	
 	Mar(String nome, String imagem) {
 		for(int i = 0; i<10; i++){
 			for(int j = 0; j<10; j++){
@@ -21,8 +20,6 @@ public class Mar {
 		this.nome = nome;
 		this.imagem = imagem;
 	}
-	
-	//metodo peixe-probabilidae
 	
 	public String getNome() {
 		return nome;
@@ -90,33 +87,33 @@ public class Mar {
 		}
 	}
 	
-	public void moveBond(int xa, int ya, int xd, int yd, Bond p) {
+	public void moveIndividuo(int xa, int ya, int xd, int yd, Individuo i) {
 		if((xd > 9)||(yd > 9)||(xd < 0)||(yd < 0)) {
 			System.out.println("A célula que você quer acessar é fora do mar");
 			//throw exception
 			return;
 		}
-		celulas[xa][ya].removeComponente("Bond");
-		celulas[xd][yd].adicionaBond(p);
+		celulas[xa][ya].removeComponente(i);
+		celulas[xd][yd].adicionaIndividuo(i);
 	}
 	
-	public void colocaBond(Bond p, boolean saida) {
+	public void colocaIndividuo(Individuo p, boolean saida) {
 		for(int i = 0; i<correntes.length; i++) {
 			if(saida) {
 				if(correntes[i].getNome().equals("Saida")) {
-					celulas[correntes[i].getX()][correntes[i].getY()].adicionaBond(p);
+					celulas[correntes[i].getX()][correntes[i].getY()].adicionaIndividuo(p);
 				}
 			}else {
 				if(correntes[i].getNome().equals("Entrada")) {
-					celulas[correntes[i].getX()][correntes[i].getY()].adicionaBond(p);
+					celulas[correntes[i].getX()][correntes[i].getY()].adicionaIndividuo(p);
 				}
 			}
 		}
 	}
 	
-	public void remove(String nome, int x, int y) {
+	public void remove(Componente c, int x, int y) {
 		if((x < 10)&&(y < 10)&&(x >= 0)&&(y >= 0)) {
-			celulas[x][y].removeComponente(nome);
+			celulas[x][y].removeComponente(c);
 		}
 	}
 	//passar classe no remove

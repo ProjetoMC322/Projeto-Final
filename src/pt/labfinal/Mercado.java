@@ -2,62 +2,18 @@ package pt.labfinal;
 
 import java.util.Scanner;
 
-public class Mercado implements Componente{
-	private String nome;
-	private String imagem;
-	private int x, y, z;
+public class Mercado extends Componente{
 	private Arma armas[] = new Arma[5];
 	private Vara varas[] = new Vara[5];
 	private int precoMunicao;
-	//imagem
+	
 	Mercado(String nome, int x, int y, int z, int precoMunicao, String imagem){
-		this.nome = nome;
-		this.x = x;
-		this.y = y;
-		this.z = z;
+		super(nome, x, y, z, imagem);
 		this.precoMunicao = precoMunicao;
-		this.imagem = imagem;
+		
 	}
 	
-	public String getNome() {
-		return nome;
-	}
-	public String getImage() {
-		return imagem;
-	}
 	
-	public int getX() {
-		return x;
-	};
-	
-	public int getY() {
-		return y;
-	};
-	public int getZ() {
-		return z;
-	};
-	public int getHP() {
-		return 0;
-	};
-	public void setX(int novo) {
-		this.x = novo;
-	};
-	public void setY(int novo) {
-		this.y = novo;
-	}
-	public void setZ(int novo) {
-		this.z = novo;
-	};
-	
-	public void andar(String movimento, Mapa mapa) {
-		return;
-	}
-	public void atirar(){
-		return;
-	}
-	public void alteraHP(int novo) {
-		return;
-	}
 	public void adicionaArma(Arma novo) {
 		for(int i = 0; i<armas.length; i++) {
 			if(armas[i] == null) {

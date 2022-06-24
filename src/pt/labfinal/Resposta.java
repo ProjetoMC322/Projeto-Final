@@ -5,15 +5,15 @@ import java.lang.Math;
 public class Resposta {
 	
 	private static final Resposta instance = new Resposta();
-	Resposta(){}
-	public static Resposta getInstance(){
-        return instance;
-    }
 	private Inimigo inimigosRestantes[]  = new Inimigo[30];
 	private Corrente correntesMaritmas[] = new Corrente[15];
 	private Mapa mapa = Mapa.getInstance();
 	private Bond bond = Bond.getInstance();
 	private Inimigo godzilla;
+	Resposta(){}
+	public static Resposta getInstance(){
+        return instance;
+    }
 	
 	public void adicionaInimigos(Inimigo novo) {
 		for(int i = 0; i < inimigosRestantes.length; i++) {
@@ -51,7 +51,7 @@ public class Resposta {
 			if(inimigosRestantes[i] == null) {
 				break;
 			}else if(inimigosRestantes[i].getHP() <= 0){
-				mapa.remove("inimigo", inimigosRestantes[i].getX(), inimigosRestantes[i].getY());
+				mapa.remove(inimigosRestantes[i], inimigosRestantes[i].getX(), inimigosRestantes[i].getY());
 			}
 		}
 		
