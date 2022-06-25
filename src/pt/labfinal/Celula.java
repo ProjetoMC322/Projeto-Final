@@ -10,11 +10,7 @@ public class Celula {
 	}
 	
 	public void adicionaComponente(Componente novo) {
-		System.out.println("asssdasdasociand " + novo.getClass());
-		if(novo instanceof Corrente) {
-			System.out.println("asssdasdasociand " + novo.getClass());
-		}
-
+		
 		if(novo instanceof Oficina || novo instanceof Mercado) {
 			for(int i = 0; i<nComponentes; i++) {
 				if(componentes[i] instanceof Oficina || componentes[i] instanceof Mercado) {
@@ -56,12 +52,12 @@ public class Celula {
 	}
 	
 	public void removeComponente(Componente c) {
-		System.out.println("removendo compo: " + c.getNome());
+		
 		for(int i = 0; i<nComponentes; i++) {
 			
 			if(componentes[i].equals(c)) {
 				for(int j = i; j<nComponentes-1 ; j++) {
-					System.out.println("craca: " + componentes[j]);
+					
 					componentes[j] = componentes[j+1];
 				}
 				break;
@@ -71,8 +67,30 @@ public class Celula {
 		}
 		nComponentes--;
 		componentes[nComponentes] = null;
-		System.out.println(nComponentes);
+		
 	}
+	
+	 public Mercado achaMercado() {
+		 if(nComponentes > 0) {
+			 for(int i = 0; i<nComponentes; i++){
+				if(componentes[i] instanceof Mercado) {
+						return (Mercado)componentes[i];
+				} 
+			 }
+		 }
+		 return null;
+	 }
+	 
+	 public Oficina achaOficina() {
+		 if(nComponentes > 0) {
+			 for(int i = 0; i<nComponentes; i++){
+				if(componentes[i] instanceof Oficina) {
+						return (Oficina)componentes[i];
+				} 
+			 }
+		 }
+		 return null;
+	 }
 	
 	public boolean adicionaIndividuo(Individuo i) {
 		if(nComponentes > 0 && componentes[nComponentes-1] instanceof Individuo) {

@@ -42,9 +42,9 @@ public class Resposta {
 	}
 	
 	public void tick() {
-		mapa.mostraMapa();
+		
 		if (bond.getHP() <= 0) {
-			System.out.println("murri");
+			System.out.println("morreu");
 			bond.perdeuJogo();
 		}else if(godzilla.getHP() <= 0) {
 			bond.ganhouJogo();
@@ -57,7 +57,7 @@ public class Resposta {
 				break;
 			}else if(inimigosRestantes[i].getHP() <= 0){
 				mapa.remove(inimigosRestantes[i], inimigosRestantes[i].getX(), inimigosRestantes[i].getY());
-				System.out.println("tentando remover" + inimigosRestantes[i].getHP());
+				//System.out.println("tentando remover" + inimigosRestantes[i].getHP());
 				
 				for(int j = i; j<inimigosRestantes.length; j++) {
 					inimigosRestantes[j] = inimigosRestantes[j+1];
@@ -94,7 +94,7 @@ public class Resposta {
 				
 				break;
 			}
-			System.out.println("inimigo" + i + " com vida " + inimigosRestantes[i].getHP());
+			//System.out.println("inimigo" + i + " com vida " + inimigosRestantes[i].getHP());
 			if(inimigosRestantes[i].getZ() == bond.getZ()) {
 				
 				if(((Math.abs(inimigosRestantes[i].getX() - bond.getX()))) >= 
@@ -132,5 +132,7 @@ public class Resposta {
 				}
 			}
 		}
+		mapa.mostraMapa();
+		System.out.println("sua vida é: " + bond.getHP() + "/" + bond.getHPMax());
 	}
 }

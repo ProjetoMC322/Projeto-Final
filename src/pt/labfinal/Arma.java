@@ -38,6 +38,11 @@ public class Arma implements Item{
 		return municaoAtual;
 	}
 	
+	public int getDano() {
+		return dano;
+	}
+	
+	
 	public void atirar(Mapa mapa, String movimento, int x, int y) {
 		System.out.println("atirando com arma: " + nome + " de dano " + dano);
 		if(municaoAtual < 1) {

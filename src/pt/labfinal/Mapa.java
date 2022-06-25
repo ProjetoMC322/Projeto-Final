@@ -87,7 +87,16 @@ public class Mapa {
     	}
     }
     
+    public Mercado achaMercado(int x, int y, int z) {
+    	return mares[z].achaMercado(x,y);
+    }
+    
+    public Oficina achaOficina(int x, int y, int z) {
+    	return mares[z].achaOficina(x,y);
+    }
+    
     public void entra(int x, int y, int z, Bond b) {
+    	
     	mares[z].entra(x, y, b);
     }
     

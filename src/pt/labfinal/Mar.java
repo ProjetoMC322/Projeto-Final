@@ -168,9 +168,18 @@ public class Mar {
 		celulas[x][y].causarDano(dano);
 	}
 	
+	 public Mercado achaMercado(int x, int y) {
+	    return celulas[x][y].achaMercado();
+	 }
+	 
+	 public Oficina achaOficina(int x, int y) {
+		    return celulas[x][y].achaOficina();
+	 }
+	 
 	public void entra(int x, int y, Bond b) {
+		System.out.println("entrou4");
 		if(celulas[x][y].checar('m')) {
-			//mercado
+			celulas[x][y].entra(b);
 		}else if(celulas[x][y].checar('o')) {
 			//oficina
 			celulas[x][y].entra(b);

@@ -8,12 +8,16 @@ public class Bond extends Individuo{
 	private boolean perdeu = false;
 	
 	private Bond(){
-		super("Bond", 0, 0, 0, 15, "bond.png");
+		super("Bond", 0, 0, 0, 60, "bond.png");
 		mala.addArma(new Arma("s", 100, 100, 100, "image"));
 	}
 	
     public static Bond getInstance(){
         return instance;
+    }
+    
+    public Inventario getInventario() {
+    	return mala;
     }
     
     public void ganhouJogo() {
@@ -60,17 +64,11 @@ public class Bond extends Individuo{
 		mala.getArma(0).atirar(mapa, movimento, x, y);
 	}
 	
-	public void equipar() {
-		mala.menus();
-	}
 	
 	public void entra(Mapa mapa) {
+		System.out.println("entrou1");
 		mapa.entra(x, y, z, this);
 	}	
-	
-	public void venda() {
-		gastaDinheiro((-1)*mala.venda());
-	}
 	
 	public void adicionaMunicao() {
 		mala.adicionaMunicao();

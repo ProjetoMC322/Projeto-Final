@@ -1,7 +1,5 @@
 package pt.labfinal;
 
-import java.util.Scanner;
-
 public class Mercado extends Componente{
 	private Arma armas[] = new Arma[5];
 	private Vara varas[] = new Vara[5];
@@ -32,76 +30,89 @@ public class Mercado extends Componente{
 		}
 	}
 	
-	public void entra(Bond b) {
-		String comando = leTeclado();
-		if(comando.equalsIgnoreCase("m")) {
+	public void mostra(int index) {
+		if(index>3) {
+			return;
+		}else if(index == 2) {
+			for(int i = 0; i<varas.length; i++) {
+				if(varas[i] == null) {
+					return;
+				}
+				System.out.println(varas[i].getNome() + " " + varas[i].getPreco());
+			}
+		}else if(index == 1) {
+			for(int i = 0; i<armas.length; i++) {
+				if(armas[i] == null) {
+					return;
+				}
+				System.out.println(armas[i].getNome() + " " + armas[i].getPreco() + " causando " + armas[i].getDano() + "de dano");
+			}
+		}
+	}
+	
+	public void compraArma(int index, Bond bond) {
+		if(index < 0) {
 			return;
 		}
-		if(comando.equalsIgnoreCase("1")) {
-			//armas
-			comando = leTeclado();
-			if(!comando.matches("-?\\d+")) {
-				entra(b);
-			}
-			Arma aux = armas[Integer.parseInt(comando) - 1];
-			if(b.getDinheiro() > aux.getPreco()) {
-				b.adicionaArma(aux);
-				b.gastaDinheiro(aux.getPreco());
-				for(int i = Integer.parseInt(comando) - 1; i<armas.length; i++) {
-					armas[i] = armas[i+1];
-					if(armas[i+1] == null) {
-						break;
-					}
-				}
-			}else {
-				//falta
-				
-			}
-			entra(b);
-		}else if(comando.equalsIgnoreCase("2")) {
-			//varas
-			comando = leTeclado();
-			if(!comando.matches("-?\\d+")) {
-				entra(b);
-			}
-			Vara aux = varas[Integer.parseInt(comando) - 1];
-			if(b.getDinheiro() > aux.getPreco()) {
-				b.adicionaVara(aux);
-				b.gastaDinheiro(aux.getPreco());
-				for(int i = Integer.parseInt(comando) - 1; i<varas.length; i++) {
-					varas[i] = varas[i+1];
-					if(varas[i+1] == null) {
-						break;
-					}
-				}
-			}else {
-				//falta
-				
-			}
-			entra(b);
-		}else if(comando.equalsIgnoreCase("3")) {
-			b.venda();
-			entra(b);
-		}else if(comando.equalsIgnoreCase("4")) {
-			//ammo
-			if(b.getDinheiro() > precoMunicao) {
-				b.adicionaMunicao();
-				b.gastaDinheiro(precoMunicao);
-			}else {
-				//falta 
-			}
-			entra(b);
+		if(index > armas.length) {
+			return;
+		}
+		if(armas[index] == null) {
+			return;
 		}else {
-			entra(b);
-			//manda que o mano ta arrastando
+			Arma aux = armas[index];
+			if(aux.getPreco() > bond.getDinheiro()) {
+				System.out.println("Voce nao tem dinheiro necessario!");
+				return;
+			}
+			bond.adicionaArma(aux);
+			bond.gastaDinheiro(aux.getPreco());
+			armas[index] = null;
+			for(int i = index; i<armas.length; i++) {
+				if(armas[i] == null) {
+					return;
+				}
+				armas[i] = armas[i+1];
+			}
+			
 		}
 	}
 	
-	public String leTeclado() {
-		Scanner keyboard = new Scanner(System.in);
-		String command = keyboard.nextLine();
-		keyboard.close();
-		return command;
-	
+	public void compraVara(int index, Bond bond) {
+		if(index < 0) {
+			return;
+		}
+		if(index > varas.length) {
+			return;
+		}
+		if(varas[index] == null) {
+			return;
+		}else {
+			Vara aux = varas[index];
+			if(aux.getPreco() > bond.getDinheiro()) {
+				System.out.println("Voce nao tem dinheiro necessario!");
+				return;
+			}
+			bond.adicionaVara(aux);
+			bond.gastaDinheiro(aux.getPreco());
+			varas[index] = null;
+			for(int i = index; i<varas.length; i++) {
+				if(varas[i] == null) {
+					return;
+				}
+				varas[i] = varas[i+1];
+			}
+			
+		}
 	}
+	
+	public void compraMunicao(Bond bond) {
+		if(precoMunicao> bond.getDinheiro()) {
+			System.out.println("Voce nao tem dinheiro necessario!");
+			return;
+		} 
+		bond.gastaDinheiro(precoMunicao);
+		bond.adicionaMunicao();
+	}
+	
 }
