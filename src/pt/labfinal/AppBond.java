@@ -9,12 +9,10 @@ public class AppBond {
 		Mapa mapa = Mapa.getInstance();
 		montador.montaMapa(componentes, itens);
 		Leitor leitor = Leitor.getInstance();
-		
+		new GUIMar("dinghyLarge1.png");
 		ControleBond cb = ControleBond.getInstance();
 		cb.iniciaControle();
 		leitor.conectaControle(cb);
-		//InterfaceGrafica i = InterfaceGrafica.getInstance();
-		//i.mostraJanelinha();
 		leitor.leTeclado();
 	}
 
