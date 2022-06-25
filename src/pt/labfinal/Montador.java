@@ -60,6 +60,7 @@ public class Montador {
 				b.setX(Integer.parseInt(arquivoComponentes[i][2]));
 				b.setY(Integer.parseInt(arquivoComponentes[i][3]));
 				b.setZ(Integer.parseInt(arquivoComponentes[i][4]));
+				
 				mapa.conecta(b);
 			}else if(arquivoComponentes[i][0].equals("I")) {
 

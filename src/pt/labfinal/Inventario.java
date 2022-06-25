@@ -21,6 +21,7 @@ public class Inventario {
 		for(int i = 0; i<armas.length; i++) {
 			if(armas[i] == null) {
 				armas[i] = nova;
+				return;
 			}
 		}
 	}
@@ -31,6 +32,7 @@ public class Inventario {
 		for(int i = 0; i<varas.length; i++) {
 			if(varas[i] == null) {
 				varas[i] = nova;
+				return;
 			}
 		}
 	}
@@ -43,6 +45,7 @@ public class Inventario {
 		for(int i = 0; i<peixes.length; i++) {
 			if(peixes[i] == null) {
 				peixes[i] = novo;
+				return;
 			}
 		}
 	}
@@ -69,7 +72,7 @@ public class Inventario {
 				if(armas[i] == null) {
 					return;
 				}
-				System.out.println(armas[i].getNome() + " " + armas[i].getPreco());
+				System.out.println(armas[i].getNome() + " " + armas[i].getPreco() + "com o dano de " + armas[i].getDano());
 			}
 		}
 	}

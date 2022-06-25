@@ -8,10 +8,14 @@ public class AppBond {
 		Montador montador = new Montador();
 		Mapa mapa = Mapa.getInstance();
 		montador.montaMapa(componentes, itens);
-		Controle controlador = new Controle();
-		InterfaceGrafica i = InterfaceGrafica.getInstance();
-		i.mostraJanelinha();
-		controlador.leTeclado();
+		Leitor leitor = Leitor.getInstance();
+		
+		ControleBond cb = ControleBond.getInstance();
+		cb.iniciaControle();
+		leitor.conectaControle(cb);
+		//InterfaceGrafica i = InterfaceGrafica.getInstance();
+		//i.mostraJanelinha();
+		leitor.leTeclado();
 	}
 
 }

@@ -22,6 +22,7 @@ public class ControleInventario extends ControleIndexavel{
 				inventario.mostra(modo);
 				return true;
 			}else {
+				System.out.println("voltando para controle bond");
 				leitor.desconectaControle();
 				leitor.conectaControle(ControleBond.getInstance());
 				return true;

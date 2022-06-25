@@ -9,7 +9,8 @@ public class Bond extends Individuo{
 	
 	private Bond(){
 		super("Bond", 0, 0, 0, 60, "bond.png");
-		mala.addArma(new Arma("s", 100, 100, 100, "image"));
+		mala.addArma(new Arma("pistola silenciada", 100, 100, 100, "image"));
+		mala.addVara(new Vara("VARA INCIIANTE", 100, 100, "image"));
 	}
 	
     public static Bond getInstance(){
