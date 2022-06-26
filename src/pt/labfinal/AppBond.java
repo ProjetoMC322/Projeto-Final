@@ -11,9 +11,6 @@ public class AppBond {
 		Leitor leitor = Leitor.getInstance();
 		ControleBond cb = ControleBond.getInstance();
 		new GUIMar();
-		cb.iniciaControle();
-		leitor.conectaControle(cb);
-		leitor.leTeclado();
 	}
 
 }

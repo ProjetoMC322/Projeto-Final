@@ -133,7 +133,7 @@ public class Resposta {
 				}
 			}
 		}
-		guimar.atualizaGUIMar();
+		//guimar.atualizaGUIMar();
 		mapa.mostraMapa();
 		System.out.println("sua vida é: " + bond.getHP() + "/" + bond.getHPMax());
 	}

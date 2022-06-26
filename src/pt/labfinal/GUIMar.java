@@ -17,12 +17,18 @@ public class GUIMar extends JFrame{
 		//criando frame
 		setTitle("007: Aposentadoria");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(500,500);
+		setSize(800,800);
 		setVisible(true);
-		
+		ControleBond cb = ControleBond.getInstance();
+		cb.iniciaControle();
+		Leitor l = Leitor.getInstance();
+		l.conectaControle(cb);
+		add(new GUIMarPanel());
+	}
+		/*
 		//criando painel dentro do frame
 		JPanel painel = new JPanel();
-		painel.setSize(500,500);
+		painel.setSize(800,800);
 		painel.setLayout(new GridLayout(10,10));
 
 		
@@ -70,4 +76,5 @@ public class GUIMar extends JFrame{
 			}
 		}
 	}
+	*/
 }
