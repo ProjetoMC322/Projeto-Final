@@ -13,7 +13,7 @@ public class Mar {
 	private float CorH, CorS, CorB;
 
 	
-	Mar(String nome, String imagem) {
+	Mar(String nome, String imagem, float CorH, float CorS, float CorB) {
 		this.celulas = new Celula[10][10];
 		for(int i = 0; i<10; i++){
 			for(int j = 0; j<10; j++){
@@ -22,6 +22,9 @@ public class Mar {
 		}
 		this.nome = nome;
 		this.imagem = imagem;
+		this.CorH = CorH;
+		this.CorS = CorS;
+		this.CorB = CorB;
 	}
 	
 	public String getNome() {
@@ -77,7 +80,6 @@ public class Mar {
 			if(c instanceof Corrente) {
 				for(int i = 0; i<correntes.length; i++) {
 					if(correntes[i] == null) {
-						System.out.println(c.getNome());
 						correntes[i] = c;
 						celulas[x][y].adicionaComponente(c);
 						return;

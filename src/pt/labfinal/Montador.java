@@ -9,14 +9,16 @@ public class Montador {
 	
 	public void montaMapa(String arquivoComponentes[][], String arquivoItens[][]) {
 		int aux = 0;
-		novo[aux] = new Mar(arquivoItens[0][0], arquivoItens[0][1]);
+		novo[aux] = new Mar(arquivoItens[0][0], "no-link", (Float.parseFloat(arquivoItens[0][1])/240),
+				(Float.parseFloat(arquivoItens[0][2])/240), (Float.parseFloat(arquivoItens[0][3])/240));
 		for(int i = 0; i<arquivoItens.length; i++) {
-			if(arquivoItens[i].length == 2 && i>0) {
+			if(arquivoItens[i].length == 4 && i>0) {
 			
 				
 				mapa.adicionaMar(novo[aux]);
 				aux++;
-				novo[aux] = new Mar(arquivoItens[i][0], arquivoItens[i][1]);
+				novo[aux] = new Mar(arquivoItens[i][0], "no-link", (Float.parseFloat(arquivoItens[i][1])/240),
+						(Float.parseFloat(arquivoItens[i][2])/240),(Float.parseFloat(arquivoItens[i][3])/240));
 				
 			}else if(arquivoItens[i][0].equals("A")){
 				novo[aux].adicionaArma(new Arma(arquivoItens[i][1], Integer.parseInt(arquivoItens[i][2]),

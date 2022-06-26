@@ -51,12 +51,12 @@ public class GUIMar extends JFrame{
 	public void atualizaGUIMar() {
 		setTitle("007: Aposentadoria");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(500,500);
+		setSize(800,800);
 		setVisible(true);
 		
 		//criando painel dentro do frame
 		JPanel painel = new JPanel();
-		painel.setSize(500,500);
+		painel.setSize(800,800);
 		painel.setLayout(new GridLayout(10,10));
 		for(int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {

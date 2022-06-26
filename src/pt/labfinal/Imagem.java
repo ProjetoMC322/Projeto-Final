@@ -8,7 +8,7 @@ public class Imagem extends JLabel{
 	
 	public Imagem(String link){
 		//super(new ImageIcon(Imagem.class.getResource(".").getPath() + link));
-		super(new ImageIcon("/C:/Users/bruno/OneDrive/Documentos/GitHub/Projeto-Final" + link));
+		super(new ImageIcon(link));
 		//temos que ver como pegar esse caminho do jeito certo
 		//System.out.println(Imagem.class.getResource(".").getPath() + link);
 	}

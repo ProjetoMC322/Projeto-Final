@@ -60,8 +60,6 @@ public class Resposta {
 				break;
 			}else if(inimigosRestantes[i].getHP() <= 0){
 				mapa.remove(inimigosRestantes[i], inimigosRestantes[i].getX(), inimigosRestantes[i].getY());
-				//System.out.println("tentando remover" + inimigosRestantes[i].getHP());
-				
 				for(int j = i; j<inimigosRestantes.length; j++) {
 					inimigosRestantes[j] = inimigosRestantes[j+1];
 					if(inimigosRestantes[j] == null) {
