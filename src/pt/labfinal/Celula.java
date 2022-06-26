@@ -165,4 +165,11 @@ public class Celula {
 		}
 		//dont throw error
 	}
+	public String mostraImagem() {
+		if (componentes[0] == null) {
+			return "dinghyLarge1.png";
+		}
+		System.out.println(componentes[0].getImage());
+		return componentes[0].getImage();
+	}
 }

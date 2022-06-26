@@ -9,8 +9,8 @@ public class AppBond {
 		Mapa mapa = Mapa.getInstance();
 		montador.montaMapa(componentes, itens);
 		Leitor leitor = Leitor.getInstance();
-		new GUIMar("dinghyLarge1.png");
 		ControleBond cb = ControleBond.getInstance();
+		new GUIMar();
 		cb.iniciaControle();
 		leitor.conectaControle(cb);
 		leitor.leTeclado();

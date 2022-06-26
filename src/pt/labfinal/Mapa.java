@@ -103,4 +103,20 @@ public class Mapa {
     public void remove(Componente c, int x, int y) {
 		mares[marAtivo].remove(c, x, y);
     }
+    
+    public String mostraImagem(int x, int y) {
+    	return mares[marAtivo].mostraImagem(x,y);
+    }
+    
+    public float pegaCorH() {
+    	return mares[marAtivo].getCorH();
+    }
+    
+    public float pegaCorS() {
+    	return mares[marAtivo].getCorS();
+    }
+    
+    public float pegaCorB() {
+    	return mares[marAtivo].getCorB();
+    }
 }

@@ -10,6 +10,9 @@ public class Resposta {
 	private Mapa mapa;
 	private Bond bond;
 	private Inimigo godzilla;
+	private GUIMar guimar;
+	
+	
 	Resposta(){}
 	public static Resposta getInstance(){
         return instance;
@@ -132,6 +135,7 @@ public class Resposta {
 				}
 			}
 		}
+		guimar.atualizaGUIMar();
 		mapa.mostraMapa();
 		System.out.println("sua vida é: " + bond.getHP() + "/" + bond.getHPMax());
 	}

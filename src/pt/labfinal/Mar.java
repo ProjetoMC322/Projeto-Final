@@ -10,6 +10,8 @@ public class Mar {
 	private Arma armas[] = new Arma[5];
 	private Vara varas[] = new Vara[5];
 	private Componente correntes[] = new Componente[3];
+	private float CorH, CorS, CorB;
+
 	
 	Mar(String nome, String imagem) {
 		this.celulas = new Celula[10][10];
@@ -28,6 +30,16 @@ public class Mar {
 	
 	public String getImage() {
 		return imagem;
+	}
+	
+	public float getCorH() {
+		return CorH;
+	}
+	public float getCorS() {
+		return CorS;
+	}
+	public float getCorB() {
+		return CorB;
 	}
 	
 	
@@ -187,5 +199,8 @@ public class Mar {
 			//nao se paga de trouxa!
 			return;
 		}
+	}
+	public String mostraImagem(int x, int y) {
+		return celulas[x][y].mostraImagem();
 	}
 }

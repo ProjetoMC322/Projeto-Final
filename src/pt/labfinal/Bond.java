@@ -8,7 +8,7 @@ public class Bond extends Individuo{
 	private boolean perdeu = false;
 	
 	private Bond(){
-		super("Bond", 0, 0, 0, 60, "bond.png");
+		super("Bond", 0, 0, 0, 60, "/Imagens/bond.png");
 		mala.addArma(new Arma("pistola silenciada", 100, 100, 100, "image"));
 		mala.addVara(new Vara("VARA INCIIANTE", 100, 100, "image"));
 	}
@@ -67,7 +67,6 @@ public class Bond extends Individuo{
 	
 	
 	public void entra(Mapa mapa) {
-		System.out.println("entrou1");
 		mapa.entra(x, y, z, this);
 	}	
 	
