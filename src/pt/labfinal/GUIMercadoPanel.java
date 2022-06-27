@@ -9,7 +9,6 @@ public class GUIMercadoPanel extends JPanel{
 	static final int SCREEN_HEIGHT = 650;
 	private Inventario inventario;
 	private Mercado mercado;
-	private Bond bond;
 	private int mode;
 	
 	
@@ -20,7 +19,6 @@ public class GUIMercadoPanel extends JPanel{
 		this.inventario = inventario;
 		this.mercado = mercado;
 		this.mode = mode;
-		bond = Bond.getInstance();
 	}
 	
 	public void draw(Graphics g) {
@@ -39,7 +37,7 @@ public class GUIMercadoPanel extends JPanel{
 			i += 50;
 			g.drawString("Aperte m para sair", 200, i);
 			i += 50;
-			g.drawString("Seu dinheiro: " + bond.getDinheiro(), 300, i);
+			g.drawString("Seu dinheiro: " + inventario.getDinheiro(), 300, i);
 			i += 100;
 		}else if(mode == 1) {
 			Arma armas[] = mercado.getArmas();

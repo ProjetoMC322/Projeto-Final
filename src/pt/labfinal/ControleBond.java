@@ -64,7 +64,7 @@ public class ControleBond implements Controle{
 						}
 						leitor.desconectaControle();
 						System.out.println("entrando na oficina!");
-						gRef.setPanelActive('l', new GUIMercadoPanel(bond.getInventario(), mercado, 0));
+						gRef.setPanelActive('l', new GUIOficinaPanel(oficina));
 						leitor.conectaControle(new ControleOficina(bond.getInventario(), oficina));
 						return true;
 					}

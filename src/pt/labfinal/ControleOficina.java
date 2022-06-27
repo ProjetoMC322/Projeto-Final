@@ -18,6 +18,7 @@ public class ControleOficina extends ControleIndexavel{
 			}
 			return true;
 		}
+		gRef.setPanelActive('l', new GUIMarPanel());
 		leitor.desconectaControle();
 		leitor.conectaControle(ControleBond.getInstance());
 		return true;

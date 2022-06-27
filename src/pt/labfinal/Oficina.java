@@ -11,15 +11,33 @@ public class Oficina extends Componente{
 		this.precoMelhoria = precoMelhoria;
 	}
 	
+	public int getCura() {
+		return cura;
+	}
+	
+	public int getMelhoria() {
+		return melhoria;
+	}
+	
+	public int getPrecoCura() {
+		return precoCura;
+	}
+	
+	public int getPrecoMelhoria() {
+		return precoMelhoria;
+	}
+	
 	public void cura(Bond b) {
 		if(b.getDinheiro() > precoCura) {
 			b.alteraHP(cura);
+			b.gastaDinheiro(precoCura);
 			precoCura = precoCura*3;
 		}
 	}
 	
 	public void melhora(Bond b) {
 		if(b.getDinheiro() > precoMelhoria) {
+			b.gastaDinheiro(precoMelhoria);
 			b.melhoraHP(melhoria);
 			precoMelhoria = precoMelhoria*3;
 		}
