@@ -1,80 +1,64 @@
 package pt.labfinal;
-
-import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.awt.event.ActionListener;
 
 
-public class GUIMar extends JFrame{
-	private static final GUIMar instance = new GUIMar ();
-	public static GUIMar getInstance(){
-        return instance;
-    }
+public class GUIMar extends JFrame implements ActionListener{
 	
 	private static final long serialVersionUID = 3L;
+	private static JPanel leftPanel, rightPanel;
 	private Mapa mapa = Mapa.getInstance();
+	private static GUIMar instance = null;
+	Timer timer;
+	boolean running = false;
+	static final int DELAY = 175;
 	
 	public GUIMar() {
 		//criando frame
 		setTitle("007: Aposentadoria");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(800,800);
+		setSize(1400,700);
 		setVisible(true);
+		instance = this;
 		ControleBond cb = ControleBond.getInstance();
 		cb.iniciaControle();
 		Leitor l = Leitor.getInstance();
 		l.conectaControle(cb);
-		add(new GUIMarPanel());
+		this.addKeyListener(Leitor.getInstance());
+		leftPanel = new GUIMarPanel();
+		rightPanel = new GUIUtilsPanel();
+		add(leftPanel, BorderLayout.LINE_START);
+		add(rightPanel, BorderLayout.LINE_END);
+		startGame();
 	}
-		/*
-		//criando painel dentro do frame
-		JPanel painel = new JPanel();
-		painel.setSize(800,800);
-		painel.setLayout(new GridLayout(10,10));
+	
+	public static GUIMar getInstance(){
+        return instance;
+    }
+	
+	public void startGame() {
+		running = true;
+		timer = new Timer(DELAY,this);
+		timer.start();
+	}
 
-		
-		//criando cada painelzinho da grid
-		for(int i = 0; i < 10; i++) {
-			for (int j = 0; j < 10; j++) {
-				JPanel painelzim = new JPanel();
-				painelzim.setSize(80, 80);
-				painelzim.setBackground(Color.getHSBColor(mapa.pegaCorH(), mapa.pegaCorS(), mapa.pegaCorB()));
-				//tava 0.66f, 1.0f, 0.58f, vamos ter que adicionar no csv os valores pra cor de cada mapa
-				Imagem imagex = new Imagem(mapa.mostraImagem(i, j));
-				painelzim.add(imagex);
-				painel.add(painelzim);
-			}
-		}
-		
-		add(painel);
-		pack();
-	}
-	
-	//temos que ver como atualizar o guimar para que nao sejam criadas novas abas com o mar toda hora, ver se vai ser singleton, etc.
-	
-	
-	
-	//ta dando bosta no atualizaGUIMar
-	public void atualizaGUIMar() {
-		setTitle("007: Aposentadoria");
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(800,800);
-		setVisible(true);
-		
-		//criando painel dentro do frame
-		JPanel painel = new JPanel();
-		painel.setSize(800,800);
-		painel.setLayout(new GridLayout(10,10));
-		for(int i = 0; i < 10; i++) {
-			for (int j = 0; j < 10; j++) {
-				JPanel painelzim = new JPanel();
-				painelzim.setSize(80, 80);
-				painelzim.setBackground(Color.getHSBColor(mapa.pegaCorH(), mapa.pegaCorS(), mapa.pegaCorB()));
-				//tava 0.66f, 1.0f, 0.58f, vamos ter que adicionar no csv os valores pra cor de cada mapa
-				Imagem imagex = new Imagem(mapa.mostraImagem(i, j));
-				painelzim.add(imagex);
-				painel.add(painelzim);
-			}
+	public void setPanelActive(char i, JPanel toActivate) {
+		if(i == 'l') {
+			remove(leftPanel);
+			leftPanel = toActivate;
+			add(leftPanel);
+		}else if(i == 'r') {
+			remove(rightPanel);
+			rightPanel = toActivate;
+			add(rightPanel);
 		}
 	}
-	*/
+	
+	public void actionPerformed(ActionEvent e) {
+		leftPanel.repaint();
+		rightPanel.repaint();
+	}
+		
 }

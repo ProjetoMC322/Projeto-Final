@@ -4,9 +4,7 @@ import java.awt.event.*;
 
 public class Leitor extends KeyAdapter {
 	private static final Leitor instance = new Leitor();
-	private Resposta resposta;
-	private Bond bond;
-	private Mapa mapa;
+	
 	private Controle controleAtivo;
 	Leitor(){
 		
@@ -16,21 +14,17 @@ public class Leitor extends KeyAdapter {
 		return instance;
 	}
 	
-	public void conectaControle(Controle control) {
-		System.out.println(control);
-		resposta = Resposta.getInstance();
-		bond = Bond.getInstance();
-		mapa = Mapa.getInstance();
+	public void conectaControle(Controle control) {	
 		this.controleAtivo = control;
 	}
 	
 	public void desconectaControle() {
-		System.out.println("is disconecting");
+		//System.out.println("is disconecting");
 		controleAtivo = null;
 	}
 	
 	public void keyPressed(KeyEvent e) {
-		System.out.println(controleAtivo);
+		//System.out.println(controleAtivo);
 		String command  = "";
 		
 		switch(e.getKeyCode()) {

@@ -18,6 +18,20 @@ public class Resposta {
         return instance;
     }
 	
+	public Inimigo[] getInimigos() {
+		Inimigo inimigos[] = new Inimigo[10];
+		int aux = 0;
+		for(int i = 0; i < inimigosRestantes.length; i++) {
+			if(inimigosRestantes[i] == null) {
+				return inimigos;
+			}else if(inimigosRestantes[i].getZ() == bond.getZ()){
+				inimigos[aux] = inimigosRestantes[i];
+				aux++;
+			}
+		}
+		return inimigos;
+	}
+	
 	public void adicionaInimigos(Inimigo novo) {
 		for(int i = 0; i < inimigosRestantes.length; i++) {
 			if(inimigosRestantes[i] == null) {

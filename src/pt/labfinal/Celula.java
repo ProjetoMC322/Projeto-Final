@@ -169,7 +169,7 @@ public class Celula {
 		if (componentes[0] == null) {
 			return "dinghyLarge1.png";
 		}
-		System.out.println(System.getProperty("user.dir") + componentes[0].getImage());
+		//System.out.println(System.getProperty("user.dir") + componentes[0].getImage());
 		return System.getProperty("user.dir") + componentes[0].getImage();
 	}
 }

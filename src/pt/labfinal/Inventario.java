@@ -42,6 +42,7 @@ public class Inventario {
 	}
 	
 	public void addPeixe(Peixe novo) {
+		GUIUtilsPanel.ultimaPescaria = novo;
 		for(int i = 0; i<peixes.length; i++) {
 			if(peixes[i] == null) {
 				peixes[i] = novo;
