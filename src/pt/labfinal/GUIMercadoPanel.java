@@ -27,44 +27,50 @@ public class GUIMercadoPanel extends JPanel{
 		
 		int i = 30, aux = 0;
 		if(mode == 0) {
-			g.drawString("Bem vindo! O que gostaria hoje?", 200, i);
-			i += 20;
+			g.drawString("Bem vindo! O que gostaria hoje?", 250, i);
+			i += 50;
 			g.drawString("Aperte 1 para comprar armas", 200, i);
-			i += 20;
+			i += 50;
 			g.drawString("Aperte 2 para comprar varas", 200, i);
-			i += 20;
+			i += 50;
 			g.drawString("Aperte 3 para vender peixes", 200, i);
-			i += 20;
+			i += 50;
 			g.drawString("Aperte 4 para comprar municao", 200, i);
 			i += 50;
+			g.drawString("Aperte m para sair", 200, i);
+			i += 50;
 			g.drawString("Seu dinheiro: " + bond.getDinheiro(), 300, i);
-			i += 20;
+			i += 100;
 		}else if(mode == 1) {
 			Arma armas[] = mercado.getArmas();
 			while(armas[aux] != null) {
-				g.drawString("Aperte" + aux + "para comprar:" + armas[aux].getNome() + " com dano: " + armas[aux].getDano() + "e municao maxima de: "
-						+ armas[aux].getMunicaoMax(), 30, i);
+				g.drawString("Aperte " + aux + " para comprar: " + armas[aux].getNome() + " com dano: " + armas[aux].getDano() + " e municao maxima de: "
+						+ armas[aux].getMunicaoMax() + " pelo preco de: " + armas[aux].getPreco(), 30, i);
 				
 				i += 20;
 				g.drawImage(new ImageIcon(armas[aux].getImage()).getImage(), 60,  i, null);
 				i += 70;
 				aux++;
 			}
+			g.drawString("Aperte m para sair", 200, i);
+			i += 50;
 		}else if(mode == 2) {
 			Vara varas[] = mercado.getVaras();
 			while(varas[aux] != null) {
-				g.drawString("Aperte" + aux + "para comprar:" + varas[aux].getNome() + " com durabilidade: "
-						+ varas[aux].getDurabilidadeMax() , 30, i);
+				g.drawString("Aperte " + aux + " para comprar: " + varas[aux].getNome() + " com durabilidade: "
+						+ varas[aux].getDurabilidadeMax() + " pelo preco de: " + varas[aux].getPreco(), 30, i);
 				
 				i += 20;
 				g.drawImage(new ImageIcon(varas[aux].getImage()).getImage(), 60,  i, null);
 				i += 70;
 				aux++;
 			}
+			g.drawString("Aperte m para sair", 200, i);
+			i += 50;
 		}else if(mode == 3) {
 			Peixe peixes[] = inventario.getPeixes();
-			while(peixes[aux] != null) {
-				g.drawString("Aperte" + aux + "para vender:" + peixes[aux].getNome() + "pelo preco de "
+			while(peixes[aux] != null && aux < 6) {
+				g.drawString("Aperte " + aux + "para vender: " + peixes[aux].getNome() + " pelo preco de "
 						+ peixes[aux].getPreco() , 30, i);
 				
 				i += 20;
@@ -72,6 +78,8 @@ public class GUIMercadoPanel extends JPanel{
 				i += 70;
 				aux++;
 			}
+			g.drawString("Aperte m para sair", 200, i);
+			i += 50; 
 		}
 	}
 	

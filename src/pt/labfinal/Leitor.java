@@ -4,10 +4,15 @@ import java.awt.event.*;
 
 public class Leitor extends KeyAdapter {
 	private static final Leitor instance = new Leitor();
+	private GUIMar guiReference = null;
 	
 	private Controle controleAtivo;
 	Leitor(){
 		
+	}
+	
+	public void addGUIReference(GUIMar guiReference) {
+		this.guiReference = guiReference;
 	}
 	
 	public static Leitor getInstance() {
@@ -95,7 +100,7 @@ public class Leitor extends KeyAdapter {
 			command = "0";
 			break;	
 		}
-		if(!controleAtivo.interpreta(command)) {
+		if(!controleAtivo.interpreta(command, guiReference)) {
 			System.out.println("cabo o jogo!");
 		}
 	}

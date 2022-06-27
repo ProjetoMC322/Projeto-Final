@@ -11,7 +11,7 @@ public abstract class ControleIndexavel implements Controle{
 		this.leitor = Leitor.getInstance();
 	}
 	
-	public boolean interpreta(String comandos) {
+	public boolean interpreta(String comandos, GUIMar gRef) {
 		return true;
 	}
 }

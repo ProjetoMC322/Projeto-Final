@@ -75,7 +75,7 @@ public class Mercado extends Componente{
 			}
 			bond.adicionaArma(aux);
 			bond.gastaDinheiro(aux.getPreco());
-			armas[index] = null;
+			
 			for(int i = index; i<armas.length; i++) {
 				if(armas[i] == null) {
 					return;

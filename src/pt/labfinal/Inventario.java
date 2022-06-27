@@ -2,9 +2,9 @@ package pt.labfinal;
 
 public class Inventario {
 	private int dinheiro;
-	private Arma armas[] = new Arma[10];
-	private Vara varas[] = new Vara[10];
-	private Peixe peixes[] = new Peixe[10];
+	private Arma armas[] = new Arma[15];
+	private Vara varas[] = new Vara[15];
+	private Peixe peixes[] = new Peixe[100];
 	
 	public int getDinheiro() {
 		return dinheiro;
@@ -137,7 +137,7 @@ public class Inventario {
 			return;
 		}else {
 			addDinheiro(peixes[index].getPreco());
-			peixes[index] = null;
+			
 			for(int i = index; i<peixes.length; i++) {
 				if(peixes[i] == null) {
 					return;

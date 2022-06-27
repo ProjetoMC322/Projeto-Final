@@ -9,7 +9,7 @@ public class ControleOficina extends ControleIndexavel{
 	}
 	
 	
-	public boolean interpreta(String comandos) {
+	public boolean interpreta(String comandos, GUIMar gRef) {
 		if(comandos.substring(0, 1).matches("-?\\d+")) {
 			if(Integer.parseInt(comandos.substring(0, 1)) == 1) {
 				oficina.cura(Bond.getInstance());

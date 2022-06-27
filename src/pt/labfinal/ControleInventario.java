@@ -6,7 +6,7 @@ public class ControleInventario extends ControleIndexavel{
 		super(inventario);
 	}
 	
-	public boolean interpreta(String comandos) {
+	public boolean interpreta(String comandos, GUIMar gRef) {
 		if(modo == 0) {
 			if(comandos.substring(0, 1).matches("-?\\d+")) {
 				modo = Integer.parseInt(comandos.substring(0, 1));

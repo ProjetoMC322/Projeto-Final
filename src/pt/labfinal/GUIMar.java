@@ -8,9 +8,8 @@ import java.awt.event.ActionListener;
 public class GUIMar extends JFrame implements ActionListener{
 	
 	private static final long serialVersionUID = 3L;
-	private static JPanel leftPanel, rightPanel;
+	private JPanel leftPanel, rightPanel;
 	private Mapa mapa = Mapa.getInstance();
-	private static GUIMar instance = null;
 	Timer timer;
 	boolean running = false;
 	static final int DELAY = 175;
@@ -21,11 +20,11 @@ public class GUIMar extends JFrame implements ActionListener{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(1400,700);
 		setVisible(true);
-		instance = this;
 		ControleBond cb = ControleBond.getInstance();
 		cb.iniciaControle();
 		Leitor l = Leitor.getInstance();
 		l.conectaControle(cb);
+		l.addGUIReference(this);
 		this.addKeyListener(Leitor.getInstance());
 		leftPanel = new GUIMarPanel();
 		rightPanel = new GUIUtilsPanel();
@@ -33,10 +32,6 @@ public class GUIMar extends JFrame implements ActionListener{
 		add(rightPanel, BorderLayout.CENTER);
 		startGame();
 	}
-	
-	public static GUIMar getInstance(){
-        return instance;
-    }
 	
 	public void startGame() {
 		running = true;
@@ -46,15 +41,18 @@ public class GUIMar extends JFrame implements ActionListener{
 
 	public void setPanelActive(char i, JPanel toActivate) {
 		if(i == 'l') {
+			
 			remove(leftPanel);
 			leftPanel = toActivate;
 			add(leftPanel, BorderLayout.LINE_START);
-			System.out.println("activates l");
+			revalidate();
+			
 		}else if(i == 'r') {
 			remove(rightPanel);
 			rightPanel = toActivate;
 			add(rightPanel, BorderLayout.CENTER);
-			System.out.println("activates ");
+			
+			revalidate();
 		}
 	}
 	

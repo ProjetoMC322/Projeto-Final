@@ -9,7 +9,7 @@ public class ControleMercado extends ControleIndexavel{
 		this.mercado = mercado;
 	}
 	
-	public boolean interpreta(String comandos) {
+	public boolean interpreta(String comandos, GUIMar gRef) {
 		if(modo == 0) {
 			if(comandos.substring(0, 1).matches("-?\\d+")) {
 				modo = Integer.parseInt(comandos.substring(0, 1));
@@ -18,10 +18,10 @@ public class ControleMercado extends ControleIndexavel{
 					modo = 0;
 					return true;
 				}
-				GUIMar.getInstance().setPanelActive('l', new GUIMercadoPanel(inventario, mercado, modo));
+				gRef.setPanelActive('l', new GUIMercadoPanel(inventario, mercado, modo));
 				return true;
 			}else {
-				GUIMar.getInstance().setPanelActive('l', new GUIMarPanel());
+				gRef.setPanelActive('l', new GUIMarPanel());
 				leitor.desconectaControle();
 				leitor.conectaControle(ControleBond.getInstance());
 				return true;
@@ -33,7 +33,7 @@ public class ControleMercado extends ControleIndexavel{
 				return true;
 			}else {
 				modo = 0;
-				GUIMar.getInstance().setPanelActive('l', new GUIMercadoPanel(inventario, mercado, modo));
+				gRef.setPanelActive('l', new GUIMercadoPanel(inventario, mercado, modo));
 				return true;
 			}
 		}else if(modo == 2) {
@@ -42,7 +42,7 @@ public class ControleMercado extends ControleIndexavel{
 				return true;
 			}else {
 				modo = 0;
-				GUIMar.getInstance().setPanelActive('l', new GUIMercadoPanel(inventario, mercado, modo));
+				gRef.setPanelActive('l', new GUIMercadoPanel(inventario, mercado, modo));
 				return true;
 			}
 		}else if(modo == 3) {
@@ -51,12 +51,12 @@ public class ControleMercado extends ControleIndexavel{
 				return true;
 			}else {
 				modo = 0;
-				GUIMar.getInstance().setPanelActive('l', new GUIMercadoPanel(inventario, mercado, modo));
+				gRef.setPanelActive('l', new GUIMercadoPanel(inventario, mercado, modo));
 				return true;
 			}
 		}
 		modo = 0;
-		GUIMar.getInstance().setPanelActive('l', new GUIMercadoPanel(inventario, mercado, modo));
+		gRef.setPanelActive('l', new GUIMercadoPanel(inventario, mercado, modo));
 		return true;
 
 	}
