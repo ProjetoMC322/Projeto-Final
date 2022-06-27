@@ -24,34 +24,43 @@ public class GUIUtilsPanel extends JPanel{
 	public void draw(Graphics g) {
 		
 		int i = 30, aux = 0;
-		g.drawString("Bond", 30, i);
+		g.drawString("Bond", 300, i);
 		i += 20;
 		g.drawString("Vida: " + bond.getHP() + "/" + bond.getHPMax(), 30, i);
 		i += 20;
 		g.drawString("Dihneiro: " + bond.getDinheiro(), 30, i);
 		i += 20;
-		g.drawString("Inimigos", SCREEN_WIDTH, i);
+		g.drawString("Arma equipada: " + bond.getArmaAtiva().getNome(), 30, i);
 		i += 20;
+		g.drawImage(new ImageIcon(bond.getArmaAtiva().getImage()).getImage(), 40,  i, null);
+		i += 70;
+		g.drawString("Municao: " + bond.getArmaAtiva().getMunicaoAtual() + "/" + 
+									bond.getArmaAtiva().getMunicaoMax() , 30, i);
+		i += 20;
+		g.drawString("Vara equipada: " + bond.getVaraAtiva().getNome(), 30, i);
+		i += 20;
+		g.drawImage(new ImageIcon(bond.getVaraAtiva().getImage()).getImage(), 40,  i, null);
+		i += 70;
+		g.drawString("Durabilidade: " + bond.getVaraAtiva().getDurabilidadeAtual() + "/" + 
+									bond.getVaraAtiva().getDurabilidadeMax() , 30, i);
+		i += 20;
+		g.drawString("Inimigos", 300, i);
+		i += 20;
+		
 		while(inimigos[aux] != null) {
 			g.drawString(inimigos[aux].getNome() + " com hp: " + inimigos[aux].getHP() + "/" + inimigos[aux].getHPMax(), 30, i);
 			aux++;
 			i += 20;
 		}
-
-		/*for(int i=0;i<(SCREEN_HEIGHT/UNIT_SIZE)+1;i++) {
-			g.drawLine(i*UNIT_SIZE, 0, i*UNIT_SIZE, SCREEN_HEIGHT);
-			g.drawLine(0, i*UNIT_SIZE, SCREEN_WIDTH, i*UNIT_SIZE);
+		
+		if(ultimaPescaria != null) {
+			g.drawString("Resultado da ultima pescaria:", 300, i);
+			i += 20;
+			g.drawImage(new ImageIcon(ultimaPescaria.getImage()).getImage(), 40,  i, null);
+			i += 70;
+			g.drawString(ultimaPescaria.getNome() + " Preco: " + ultimaPescaria.getPreco(), 30, i);
 		}
-		for(int i = 0; i < 10; i++) {
-			for (int j = 0; j < 10; j++) {
-				if(mapa.mostraImagem(i, j).equals("dinghyLarge1.png")) {
-					//System.out.println("etes");
-					continue;
-				}
-				g.drawImage(new ImageIcon(mapa.mostraImagem(i, j)).getImage(), j*UNIT_SIZE,  i*UNIT_SIZE, null);
-						
-			}
-		}*/
+
 	}
 	
 		

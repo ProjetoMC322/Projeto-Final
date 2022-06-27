@@ -41,6 +41,18 @@ public class Inventario {
 		return peixes[index];
 	}
 	
+	public Peixe[] getPeixes() {
+		return peixes;
+	}
+	
+	public Arma[] getArmas() {
+		return armas;
+	}
+	
+	public Vara[] getVaras() {
+		return varas;
+	}
+	
 	public void addPeixe(Peixe novo) {
 		GUIUtilsPanel.ultimaPescaria = novo;
 		for(int i = 0; i<peixes.length; i++) {

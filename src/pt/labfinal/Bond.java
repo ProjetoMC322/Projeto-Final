@@ -9,8 +9,8 @@ public class Bond extends Individuo{
 	
 	private Bond(){
 		super("Bond", 0, 0, 0, 500, "/Imagens/bond.png");
-		mala.addArma(new Arma("pistola silenciada", 100, 100, 100, "image"));
-		mala.addVara(new Vara("VARA INCIIANTE", 100, 100, "image"));
+		mala.addArma(new Arma("pistola silenciada", 100, 100, 100, "/Imagens/silenced.png"));
+		mala.addVara(new Vara("Vara de pesca desgastada", 100, 100, "/Imagens/vara1.png"));
 	}
 	
     public static Bond getInstance(){
@@ -59,6 +59,14 @@ public class Bond extends Individuo{
 	
 	public void pescar(Mapa mapa) {
 		mala.addPeixe(mala.getVara(0).pescar(mapa));
+	}
+	
+	public Arma getArmaAtiva() {
+		return mala.getArma(0);
+	}
+	
+	public Vara getVaraAtiva() {
+		return mala.getVara(0);
 	}
 	
 	public void atirar(Mapa mapa, String movimento) {

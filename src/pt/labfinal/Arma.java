@@ -23,7 +23,7 @@ public class Arma implements Item{
 	}
 	
 	public String getImage() {
-		return imagem;
+		return System.getProperty("user.dir") + imagem;
 	}
 	
 	public int getPreco() {

@@ -30,6 +30,14 @@ public class Mercado extends Componente{
 		}
 	}
 	
+	public Arma[] getArmas() {
+		return armas;
+	}
+	
+	public Vara[] getVaras() {
+		return varas;
+	}
+	
 	public void mostra(int index) {
 		if(index>3) {
 			return;

@@ -18,13 +18,10 @@ public class ControleMercado extends ControleIndexavel{
 					modo = 0;
 					return true;
 				}
-				if(modo == 3) {
-					inventario.mostra(modo);
-					return true;
-				}
-				mercado.mostra(modo);
+				GUIMar.getInstance().setPanelActive('l', new GUIMercadoPanel(inventario, mercado, modo));
 				return true;
 			}else {
+				GUIMar.getInstance().setPanelActive('l', new GUIMarPanel());
 				leitor.desconectaControle();
 				leitor.conectaControle(ControleBond.getInstance());
 				return true;
@@ -36,6 +33,7 @@ public class ControleMercado extends ControleIndexavel{
 				return true;
 			}else {
 				modo = 0;
+				GUIMar.getInstance().setPanelActive('l', new GUIMercadoPanel(inventario, mercado, modo));
 				return true;
 			}
 		}else if(modo == 2) {
@@ -44,6 +42,7 @@ public class ControleMercado extends ControleIndexavel{
 				return true;
 			}else {
 				modo = 0;
+				GUIMar.getInstance().setPanelActive('l', new GUIMercadoPanel(inventario, mercado, modo));
 				return true;
 			}
 		}else if(modo == 3) {
@@ -52,10 +51,12 @@ public class ControleMercado extends ControleIndexavel{
 				return true;
 			}else {
 				modo = 0;
+				GUIMar.getInstance().setPanelActive('l', new GUIMercadoPanel(inventario, mercado, modo));
 				return true;
 			}
 		}
 		modo = 0;
+		GUIMar.getInstance().setPanelActive('l', new GUIMercadoPanel(inventario, mercado, modo));
 		return true;
 
 	}

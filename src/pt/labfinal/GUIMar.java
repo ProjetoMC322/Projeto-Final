@@ -30,7 +30,7 @@ public class GUIMar extends JFrame implements ActionListener{
 		leftPanel = new GUIMarPanel();
 		rightPanel = new GUIUtilsPanel();
 		add(leftPanel, BorderLayout.LINE_START);
-		add(rightPanel, BorderLayout.LINE_END);
+		add(rightPanel, BorderLayout.CENTER);
 		startGame();
 	}
 	
@@ -48,11 +48,13 @@ public class GUIMar extends JFrame implements ActionListener{
 		if(i == 'l') {
 			remove(leftPanel);
 			leftPanel = toActivate;
-			add(leftPanel);
+			add(leftPanel, BorderLayout.LINE_START);
+			System.out.println("activates l");
 		}else if(i == 'r') {
 			remove(rightPanel);
 			rightPanel = toActivate;
-			add(rightPanel);
+			add(rightPanel, BorderLayout.CENTER);
+			System.out.println("activates ");
 		}
 	}
 	

@@ -64,10 +64,13 @@ public class ControleBond implements Controle{
 						}
 						leitor.desconectaControle();
 						System.out.println("entrando na oficina!");
+						GUIMar.getInstance().setPanelActive('l', new GUIMercadoPanel(bond.getInventario(), mercado, 0));
 						leitor.conectaControle(new ControleOficina(bond.getInventario(), oficina));
 						return true;
 					}
 					System.out.println("entrando no mercado!");
+					
+					GUIMar.getInstance().setPanelActive('l', new GUIMercadoPanel(bond.getInventario(), mercado, 0));
 					leitor.desconectaControle();
 					leitor.conectaControle(new ControleMercado(bond.getInventario(), mercado));
 					return true;
