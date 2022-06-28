@@ -5,7 +5,7 @@ Este projeto envolveu a implementação de um jogo em espaço celular. Nossa equ
 * Bruno Monteiro Bonetti - 232488
 * Felipe Gabriel Brabes da Silva - 247085
 # Arquivo Executável do Jogo
-link
+Não conseguimos gerar o arquivo executável do jogo por conflitos na leitura das imagens, só para os executáveis.
 # Slides do Projeto
 ## Slides da Prévia
 https://docs.google.com/presentation/d/1bxpYdvJqY_zDTqkzxlfMwgjFqRVFSbtaSZaTso2gOtQ/edit#slide=id.p
