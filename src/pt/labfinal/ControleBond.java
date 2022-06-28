@@ -51,6 +51,7 @@ public class ControleBond implements Controle{
 				}
 				else if (comandos.substring(i, i+1).equalsIgnoreCase("u")) {
 					System.out.println("entrando no inventario! 1 para trocar de arma, 2 vara, 3 peixe");
+					gRef.setPanelActive('l', new GUIInventarioPanel(bond.getInventario(), 0));
 					leitor.desconectaControle();
 					leitor.conectaControle(new ControleInventario(bond.getInventario()));
 					return true;

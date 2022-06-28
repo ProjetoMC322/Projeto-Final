@@ -12,17 +12,19 @@ public class ControleInventario extends ControleIndexavel{
 				modo = Integer.parseInt(comandos.substring(0, 1));
 				if(modo > 3) {
 					modo = 0;
+					gRef.setPanelActive('l', new GUIInventarioPanel(inventario, 0));
 					return true;
 				}
 				if(modo == 3) {
-					inventario.mostra(modo);
-					modo = 0;
+					
+					gRef.setPanelActive('l', new GUIInventarioPanel(inventario, modo));
 					return true;
 				}
-				inventario.mostra(modo);
+				gRef.setPanelActive('l', new GUIInventarioPanel(inventario, modo));
 				return true;
 			}else {
 				System.out.println("voltando para controle bond");
+				gRef.setPanelActive('l', new GUIMarPanel());
 				leitor.desconectaControle();
 				leitor.conectaControle(ControleBond.getInstance());
 				return true;
@@ -34,6 +36,7 @@ public class ControleInventario extends ControleIndexavel{
 				return true;
 			}else {
 				modo = 0;
+				gRef.setPanelActive('l', new GUIInventarioPanel(inventario, 0));
 				return true;
 			}
 		}else if(modo == 2) {
@@ -42,13 +45,15 @@ public class ControleInventario extends ControleIndexavel{
 				return true;
 			}else {
 				modo = 0;
+				gRef.setPanelActive('l', new GUIInventarioPanel(inventario, 0));
 				return true;
 			}
 		}else if(modo == 3) {
-			inventario.mostra(modo);
+			gRef.setPanelActive('l', new GUIInventarioPanel(inventario, 0));
 			modo = 0;
 			return true;
 		}
+		gRef.setPanelActive('l', new GUIInventarioPanel(inventario, 0));
 		modo = 0;
 		return true;
 

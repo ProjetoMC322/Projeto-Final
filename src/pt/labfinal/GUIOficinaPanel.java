@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class GUIOficinaPanel extends JPanel{
 
-	private static final long serialVersionUID = 7L;
+	private static final long serialVersionUID = 8L;
 	static final int SCREEN_WIDTH = 650;
 	static final int SCREEN_HEIGHT = 650;
 	private Oficina oficina;
