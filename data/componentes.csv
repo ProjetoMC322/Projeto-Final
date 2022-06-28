@@ -1,21 +1,21 @@
 B,Bond,0,0,0
-I,Capanga do Cartel,4,5,0,10,2,/assets/BadBoat.png
-I,Capanga do Cartel,8,2,0,10,2,/assets/BadBoat.png
+I,Capanga do Cartel,2,8,0,10,2,/assets/BadBoat.png
+I,Capanga do Cartel,8,1,0,10,2,/assets/BadBoat.png
 I,Capanga do Cartel,8,8,0,10,2,/assets/BadBoat.png
 C,Saida,9,9,0,/assets/saida.png
 O,9,4,0,2,5,1,10,/assets/Oficina1.png
 M,0,5,0,15,/assets/mercado1.png
-I,Pirata caribenho,7,8,1,15,2,/assets/pirata.png
-I,Pirata caribenho,1,2,1,15,2,/assets/pirata.png
-I,Pirata caribenho,2,9,1,15,2,/assets/pirata.png
-I,Pirata caribenho,0,7,1,15,2,/assets/pirata.png
+I,Pirata caribenho,1,0,1,11,2,/assets/pirata.png
+I,Pirata caribenho,0,0,1,11,2,/assets/pirata.png
+I,Pirata caribenho,9,9,1,11,2,/assets/pirata.png
+I,Pirata caribenho,0,7,1,11,2,/assets/pirata.png
 I,Capitao,2,7,1,20,5,/assets/capitao.png
 C,Entrada,9,0,1,/assets/entrada.png
 C,Saida,0,9,1,/assets/saida.png
 O,7,9,1,3,5,2,20,/assets/Oficina2.png
 M,0,5,1,15,/assets/mercado2.png
-I,Agente da Gestapo,5,4,2,20,3,/assets/Amarelo.png
-I,Agente da Gestapo,5,7,2,20,3,/assets/Amarelo.png
+I,Agente da Gestapo,0,5,2,20,3,/assets/Amarelo.png
+I,Agente da Gestapo,2,9,2,20,3,/assets/Amarelo.png
 I,Agente da Gestapo,5,9,2,20,3,/assets/Amarelo.png
 I,Tenente,8,8,2,25,8,/assets/Azul.png
 C,Entrada,0,0,2,/assets/entrada.png

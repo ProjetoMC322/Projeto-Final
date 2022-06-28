@@ -38,7 +38,7 @@ public class Vara implements Item{
 	}
 	
 	public Peixe pescar(Mapa mapa) {
-		System.out.println("Camada4");
+		
 		if(durabilidadeAtual<1) {
 			//erro arma sem durabilidade
 			return null;

@@ -188,7 +188,7 @@ public class Mar {
 	 }
 	 
 	public void entra(int x, int y, Bond b) {
-		System.out.println("entrou4");
+		
 		if(celulas[x][y].checar('m')) {
 			celulas[x][y].entra(b);
 		}else if(celulas[x][y].checar('o')) {

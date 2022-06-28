@@ -75,7 +75,6 @@ public class Arma implements Item{
 		}else if (movimento.equalsIgnoreCase("k")) {
 			while(x<9) {
 				if(mapa.checarInimigo(x+1, y)){
-					System.out.println("Achamos inimigo em:" + x+1 + " " + y );
 					mapa.causarDano(x+1, y, dano);
 					municaoAtual--;
 					return;

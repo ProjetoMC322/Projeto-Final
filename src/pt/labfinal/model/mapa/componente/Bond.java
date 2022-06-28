@@ -12,9 +12,9 @@ public class Bond extends Individuo{
 	private boolean perdeu = false;
 	
 	private Bond(){
-		super("Bond", 0, 0, 0, 500, "/assets/bond.png");
-		mala.addArma(new Arma("pistola silenciada", 100, 100, 100, "/assets/silenced.png"));
-		mala.addVara(new Vara("Vara de pesca desgastada", 100, 100, "/assets/vara1.png"));
+		super("Bond", 0, 0, 0, 30, "/assets/bond.png");
+		mala.addArma(new Arma("pistola silenciada", 100, 30, 6, "/assets/silenced.png"));
+		mala.addVara(new Vara("Vara de pesca desgastada", 100, 15, "/assets/vara1.png"));
 	}
 	
     public static Bond getInstance(){
