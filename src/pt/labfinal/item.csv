@@ -4,6 +4,7 @@ P,55,Sardinha,5,/Imagens/sardinha.png
 P,80,Camarao,10,/Imagens/camarao0.png
 P,100,Luciano-do-golfo,25,/Imagens/luciano.png
 AR,Glock Rajada,50,30,3,/Imagens/glock.png,3
+AC,Canhao enferrujado,100,8,12,/Imagens/canhaoE.png
 V,Vara de pesca semi-nova,20,15,/Imagens/vara2.png
 Caribe,104,199,180
 P,25,Sacola Plastica,1,/Imagens/sacola.png
@@ -11,7 +12,7 @@ P,45,Siri,7,/Imagens/siri.png
 P,65,Baiacu,15,/Imagens/baiacu.png
 P,80,Lagosta,25,/Imagens/lagosta.png
 P,100,Cavalo-marinho,50,/Imagens/cavalomarinho.png
-AC,Canhao enferrujado,100,8,12,/Imagens/canhaoE.png
+AP,Bazuca,800,5,20,/Imagens/bazuca.png
 A,Beretta,75,20,10,/Imagens/beretta.png
 V,Vara de pesca nova,50,30,/Imagens/vara3.png
 Oceano Atlantico Norte,138,153,114
@@ -30,8 +31,7 @@ P,60,Camarao Pistola,30,/Imagens/camarao1.png
 P,80,Bacalhau,60,/Imagens/bacalhau.png
 P,95,Salmao,100,/Imagens/salmao.png
 P,100,Magikarp shiny,250,/Imagens/magikarp.png
-AP,Bazuca,800,5,20,/Imagens/bazuca.png
-AR,AK Rajada,500,60,5,/Imagens/ak47.png,4
+AP,Bazuca do czar,1600,6,30,/Imagens/bazucaCzar.png
 AE,Escopeta de alavanca,500,8,60,/Imagens/escopetadealavanca.png
 VS,Vara da sorte,750,25,/Imagens/vara5.png,15
 Mar Siberiano,153,207,61
@@ -39,7 +39,7 @@ P,35,Garrafa quebrada,1,/Imagens/garrafa.png
 P,70,Esturjao-siberiano,50,/Imagens/esturjaoSiberiano.png
 P,95,Atum,120,/Imagens/salmao.png
 P,100,Pinguim,350,/Imagens/pinguim.png
-AP,Bazuca do czar,1600,6,30,/Imagens/bazucaCzar.png
+AR,AK Rajada,500,60,5,/Imagens/ak47.png,4
 AC,Canhao de guerra,1000,10,25,/Imagens/canhaoG.png
 Mar do Japao,160,240,140
 P,80,Canudinho plastico,0,/Imagens/canudo.png
