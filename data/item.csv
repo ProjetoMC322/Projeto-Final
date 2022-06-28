@@ -1,0 +1,46 @@
+Golfo do Mexico,120,150,137
+P,30,Bota furada,1,/assets/botaF.png
+P,55,Sardinha,5,/assets/sardinha.png
+P,80,Camarao,10,/assets/camarao0.png
+P,100,Luciano-do-golfo,25,/assets/luciano.png
+AR,Glock Rajada,50,30,3,/assets/glock.png,3
+AC,Canhao enferrujado,100,8,12,/assets/canhaoE.png
+V,Vara de pesca semi-nova,20,15,/assets/vara2.png
+Caribe,104,199,180
+P,25,Sacola Plastica,1,/assets/sacola.png
+P,45,Siri,7,/assets/siri.png
+P,65,Baiacu,15,/assets/baiacu.png
+P,80,Lagosta,25,/assets/lagosta.png
+P,100,Cavalo-marinho,50,/assets/cavalomarinho.png
+AP,Bazuca,800,5,20,/assets/bazuca.png
+A,Beretta,75,20,10,/assets/beretta.png
+V,Vara de pesca nova,50,30,/assets/vara3.png
+Oceano Atlantico Norte,138,153,114
+P,30,Pneu,1,/assets/pneu.png
+P,45,Peixinho Dourado,10,/assets/peixedourado.png
+P,60,Namorado,15,/assets/namorado.png
+P,80,Robalo,20,/assets/robalo.png
+P,95,Raia Manta,60,/assets/raia.png
+P,100,Esturjao,200,/assets/esturjao.png
+AE,Escopeta cano duplo,300,6,30,/assets/escopeta.png
+V,Vara de pesca com molinete,100,50,/assets/vara4.png
+Oceano Artico,155,131,114
+P,30,Bloco de gelo,1,/assets/cubodegelo.png
+P,45,Carpa,10,/assets/carpa.png
+P,60,Camarao Pistola,30,/assets/camarao1.png
+P,80,Bacalhau,60,/assets/bacalhau.png
+P,95,Salmao,100,/assets/salmao.png
+P,100,Magikarp shiny,250,/assets/magikarp.png
+AP,Bazuca do czar,1600,6,30,/assets/bazucaCzar.png
+AE,Escopeta de alavanca,500,8,60,/assets/escopetadealavanca.png
+VS,Vara da sorte,750,25,/assets/vara5.png,15
+Mar Siberiano,153,207,61
+P,35,Garrafa quebrada,1,/assets/garrafa.png
+P,70,Esturjao-siberiano,50,/assets/esturjaoSiberiano.png
+P,95,Atum,120,/assets/salmao.png
+P,100,Pinguim,350,/assets/pinguim.png
+AR,AK Rajada,500,60,5,/assets/ak47.png,4
+AC,Canhao de guerra,1000,10,25,/assets/canhaoG.png
+Mar do Japao,160,240,140
+P,80,Canudinho plastico,0,/assets/canudo.png
+P,100,Pescada branca,180,/assets/pescada.png

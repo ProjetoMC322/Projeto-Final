@@ -49,7 +49,6 @@ public class Arma implements Item{
 	public void atirar(Mapa mapa, String movimento, int x, int y) {
 		System.out.println("atirando com arma: " + nome + " de dano " + dano);
 		if(municaoAtual < 1) {
-			//erro
 			return;
 		}
 		if (movimento.equalsIgnoreCase("i")) {
@@ -103,6 +102,9 @@ public class Arma implements Item{
 	
 	public void adicionaMunicao() {
 		municaoAtual +=  municaoAtual/4;
+		if(municaoAtual/4 < 1) {
+			municaoAtual += 1;
+		}
 		if(municaoAtual > municaoMax) {
 			municaoAtual = municaoMax;
 		}

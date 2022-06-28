@@ -68,21 +68,22 @@ public class Resposta {
 		}else if(godzilla.getHP() <= 0) {
 			bond.ganhouJogo();
 		}
-
-		
-		
+		int dead = 0;
 		for(int i = 0; i<inimigosRestantes.length; i++) {
-			if(inimigosRestantes[i] == null) {
-				break;
-			}else if(inimigosRestantes[i].getHP() <= 0){
-				mapa.remove(inimigosRestantes[i], inimigosRestantes[i].getX(), inimigosRestantes[i].getY());
-				for(int j = i; j<inimigosRestantes.length; j++) {
+			if(inimigosRestantes[i-dead] == null) {
+				continue;
+			}
+			if(inimigosRestantes[i-dead].getHP() <= 0){
+				mapa.remove(inimigosRestantes[i-dead], inimigosRestantes[i-dead].getX(), inimigosRestantes[i-dead].getY());
+				for(int j = i-dead; j<inimigosRestantes.length; j++) {
 					inimigosRestantes[j] = inimigosRestantes[j+1];
+					
 					if(inimigosRestantes[j] == null) {
+						dead++;
 						break;
 					}
 				}
-				
+			
 			}
 		}
 		
@@ -90,16 +91,12 @@ public class Resposta {
 			if(correntesMaritmas[i] == null) {
 				break;
 			}
-			//System.out.println("compara conrrente " + correntesMaritmas[i].getX() + " "  + bond.getX()+ " "  + bond.getY() + correntesMaritmas[i].getY() + " " + correntesMaritmas[i].getZ() + " "  + bond.getZ());
 			if((correntesMaritmas[i].getZ() == bond.getZ()) && (correntesMaritmas[i].getX() == bond.getX()) &&
 					(correntesMaritmas[i].getY() == bond.getY())) {
-				//System.out.println("1");
 				if(correntesMaritmas[i].getNome().equals("Saida")) {
-					//System.out.println("12");
 					 bond.andar("z", mapa);
 					 break;
 				}else if(correntesMaritmas[i].getNome().equals("Entrada")) {
-					//System.out.println("14");
 					 bond.andar("x", mapa);
 					 break;
 				}
@@ -111,7 +108,6 @@ public class Resposta {
 				
 				break;
 			}
-			//System.out.println("inimigo" + i + " com vida " + inimigosRestantes[i].getHP());
 			if(inimigosRestantes[i].getZ() == bond.getZ()) {
 				
 				if(((Math.abs(inimigosRestantes[i].getX() - bond.getX()))) >= 
@@ -149,7 +145,5 @@ public class Resposta {
 				}
 			}
 		}
-		mapa.mostraMapa();
-		System.out.println("sua vida é: " + bond.getHP() + "/" + bond.getHPMax());
 	}
 }

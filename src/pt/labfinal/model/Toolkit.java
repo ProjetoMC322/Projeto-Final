@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Toolkit {
 	
 	   public static String DIRETORIO = System.getProperty("user.dir") +
-			                            "/src/pt/labfinal/";
+			                            "/data/";
 	   private static BufferedReader itemStr;
 	   private static BufferedReader componentesStr;
 	   

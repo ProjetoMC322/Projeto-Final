@@ -15,9 +15,7 @@ public class Inventario {
 		return dinheiro;
 	}
 	public void addDinheiro(int add) {
-		System.out.println("dinheiro antes: " + dinheiro);
 		dinheiro += add;
-		System.out.println("dinheiro depois: " + dinheiro);
 	}
 	public Arma getArma(int index) {
 		return armas[index];
@@ -64,33 +62,6 @@ public class Inventario {
 			if(peixes[i] == null) {
 				peixes[i] = novo;
 				return;
-			}
-		}
-	}
-	
-	public void mostra(int index) {
-		if(index>3) {
-			return;
-		}else if(index == 3) {
-			for(int i = 0; i<peixes.length; i++) {
-				if(peixes[i] == null) {
-					return;
-				}
-				System.out.println(peixes[i].getNome() + " " + peixes[i].getPreco());
-			}
-		}else if(index == 2) {
-			for(int i = 0; i<varas.length; i++) {
-				if(varas[i] == null) {
-					return;
-				}
-				System.out.println(varas[i].getNome() + " " + varas[i].getPreco());
-			}
-		}else if(index == 1) {
-			for(int i = 0; i<armas.length; i++) {
-				if(armas[i] == null) {
-					return;
-				}
-				System.out.println(armas[i].getNome() + " " + armas[i].getPreco() + "com o dano de " + armas[i].getDano());
 			}
 		}
 	}
