@@ -33,7 +33,7 @@ public class GUIUtilsPanel extends JPanel{
 		i += 20;
 		g.drawString("Vida: " + bond.getHP() + "/" + bond.getHPMax(), 30, i);
 		i += 20;
-		g.drawString("Dihneiro: " + bond.getDinheiro(), 30, i);
+		g.drawString("Dinheiro: " + bond.getDinheiro(), 30, i);
 		i += 20;
 		g.drawString("Arma equipada: " + bond.getArmaAtiva().getNome(), 30, i);
 		i += 20;
