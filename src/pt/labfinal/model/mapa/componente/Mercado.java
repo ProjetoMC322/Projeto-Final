@@ -101,7 +101,6 @@ public class Mercado extends Componente{
 		}else {
 			Vara aux = varas[index];
 			if(aux.getPreco() > bond.getDinheiro()) {
-				System.out.println("Voce nao tem dinheiro necessario!");
 				return;
 			}
 			bond.adicionaVara(aux);
@@ -119,7 +118,6 @@ public class Mercado extends Componente{
 	
 	public void compraMunicao(Bond bond) {
 		if(precoMunicao> bond.getDinheiro()) {
-			System.out.println("Voce nao tem dinheiro necessario!");
 			return;
 		} 
 		bond.gastaDinheiro(precoMunicao);

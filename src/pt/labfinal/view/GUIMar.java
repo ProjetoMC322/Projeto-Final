@@ -41,20 +41,24 @@ public class GUIMar extends JFrame implements ActionListener{
 		timer = new Timer(DELAY,this);
 		timer.start();
 	}
+	
+	public void gameOver(int i) {
+		remove(leftPanel);
+		remove(rightPanel);
+		add(new GUIGameOverPanel(i), BorderLayout.CENTER);
+		revalidate();
+	}
 
 	public void setPanelActive(char i, JPanel toActivate) {
 		if(i == 'l') {
-			
 			remove(leftPanel);
 			leftPanel = toActivate;
 			add(leftPanel, BorderLayout.LINE_START);
 			revalidate();
-			
 		}else if(i == 'r') {
 			remove(rightPanel);
 			rightPanel = toActivate;
 			add(rightPanel, BorderLayout.CENTER);
-			
 			revalidate();
 		}
 	}

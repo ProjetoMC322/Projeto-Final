@@ -110,28 +110,6 @@ public class Celula {
 		}
 	}
 	
-	public char getChar() {
-		
-		if(nComponentes > 0) {
-			for(int i = 0; i<nComponentes; i++) {
-				
-				if(componentes[i] instanceof Bond) {
-					return 'B';
-				}if(componentes[i] instanceof Inimigo) {
-					return 'I';
-				}if(componentes[i] instanceof Mercado) {
-					return 'M';
-				}if(componentes[i] instanceof Oficina) {
-					return 'O';
-				}if(componentes[i] instanceof Componente) {
-					return 'C';
-				}
-				
-			}
-		}
-		return '-';
-	}
-	
 	public boolean checar(char c) {
 		for(int i = 0; i<nComponentes; i++) {
 			if(c == 'i') {
@@ -170,13 +148,12 @@ public class Celula {
 				return;
 			}
 		}
-		//dont throw error
 	}
+	
 	public String mostraImagem() {
 		if (componentes[0] == null) {
 			return "dinghyLarge1.png";
 		}
-		//System.out.println(System.getProperty("user.dir") + componentes[0].getImage());
 		return componentes[0].getImage();
 	}
 }

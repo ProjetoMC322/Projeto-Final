@@ -47,7 +47,6 @@ public class Arma implements Item{
 	
 	
 	public void atirar(Mapa mapa, String movimento, int x, int y) {
-		System.out.println("atirando com arma: " + nome + " de dano " + dano);
 		if(municaoAtual < 1) {
 			return;
 		}

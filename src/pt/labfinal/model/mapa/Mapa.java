@@ -54,12 +54,7 @@ public class Mapa {
 	}
     
     public Peixe pescar(int bonus) {
-    	System.out.println("Camada5");
     	return mares[marAtivo].pescar(bonus);
-    }
-    
-    public void mostraMapa() {
-    	mares[marAtivo].mostra();
     }
     
     public boolean checarInimigo(int x, int y) {
@@ -79,16 +74,13 @@ public class Mapa {
     	if(saida) {
     		
     		marAtivo++;
-    		System.out.println("esta aparecendo "+ marAtivo+" vezes");
     		if(mares[marAtivo].colocaIndividuo(i, saida)) {
-    			//i.setZ(marAtivo);
     			return true;
     		}
     		return false;
     	}else {
     		marAtivo--;
     		if(mares[marAtivo].colocaIndividuo(i, saida)) {
-    			//i.setZ(marAtivo);
     			return true;
     		}
     		return false;

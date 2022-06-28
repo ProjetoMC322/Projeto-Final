@@ -132,16 +132,16 @@ public class Mar {
 	public boolean colocaIndividuo(Individuo p, boolean saida) {
 		for(int i = 0; i<correntes.length; i++) {
 			if(saida) {
-				System.out.println(correntes[i].getNome().equals("Entrada"));
+				
 				if(correntes[i].getNome().equals("Entrada")) {
-					System.out.println(correntes[i].getX() + " " + correntes[i].getY());
+					
 					celulas[correntes[i].getX()][correntes[i].getY()].adicionaIndividuo(p);
 					p.setX(correntes[i].getX());
 					p.setY(correntes[i].getY());
 					return true;
 				}
 			}else {
-				System.out.println(correntes[i].getNome().equals("Saida"));
+				
 				if(correntes[i].getNome().equals("Saida")) {
 					celulas[correntes[i].getX()][correntes[i].getY()].adicionaIndividuo(p);
 					p.setX(correntes[i].getX());
@@ -153,25 +153,12 @@ public class Mar {
 		return false;
 	}
 	
-	
-	
-	public void mostra() {
-		
-		for(int i = 0; i<10; i++) {
-			for(int j = 0; j<10; j++) {
-				System.out.print(celulas[i][j].getChar());
-			}
-			System.out.println("");
-		}
-	}
-	
 	public void remove(Componente c, int x, int y) {
 		if((x < 10)&&(y < 10)&&(x >= 0)&&(y >= 0)) {
-			System.out.println(" tentando remover o componente " + c.getNome());
 			celulas[x][y].removeComponente(c);
 		}
 	}
-	//passar classe no remove
+	
 	public Peixe pescar(int bonus) {
 		
 		Random rand = new Random();
@@ -205,10 +192,8 @@ public class Mar {
 		if(celulas[x][y].checar('m')) {
 			celulas[x][y].entra(b);
 		}else if(celulas[x][y].checar('o')) {
-			//oficina
 			celulas[x][y].entra(b);
 		}else {
-			//nao se paga de trouxa!
 			return;
 		}
 	}

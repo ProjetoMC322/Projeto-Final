@@ -5,6 +5,7 @@ import java.lang.Math;
 import pt.labfinal.model.mapa.componente.Bond;
 import pt.labfinal.model.mapa.componente.Componente;
 import pt.labfinal.model.mapa.componente.inimigo.Inimigo;
+import pt.labfinal.view.GUIMar;
 
 public class Resposta {
 	
@@ -60,13 +61,14 @@ public class Resposta {
 		godzilla = novo;
 	}
 	
-	public void tick() {
+	public void tick(GUIMar gRef) {
 		
 		if (bond.getHP() <= 0) {
-			System.out.println("morreu");
 			bond.perdeuJogo();
+			gRef.gameOver(0);
 		}else if(godzilla.getHP() <= 0) {
 			bond.ganhouJogo();
+			gRef.gameOver(1);
 		}
 		int dead = 0;
 		for(int i = 0; i<inimigosRestantes.length; i++) {

@@ -42,7 +42,7 @@ public class ControleBond implements Controle{
 					comandos.substring(i, i+1).equalsIgnoreCase("s") ||
 					comandos.substring(i, i+1).equalsIgnoreCase("d") ) {
 						bond.andar(comandos.substring(i, i + 1), mapa); 
-						resposta.tick();
+						resposta.tick(gRef);
 						return true;
 				}
 				else if (comandos.substring(i, i+1).equalsIgnoreCase("i") ||
@@ -50,17 +50,16 @@ public class ControleBond implements Controle{
 						comandos.substring(i, i+1).equalsIgnoreCase("k") ||
 						comandos.substring(i, i+1).equalsIgnoreCase("l")) {
 							bond.atirar(mapa, comandos.substring(i, i+1));
-							resposta.tick();
+							resposta.tick(gRef);
 							return true;
 				}
 				else if (comandos.substring(i, i+1).equalsIgnoreCase("p")) {
 					
 					bond.pescar(mapa);
-					resposta.tick();
+					resposta.tick(gRef);
 					return true;
 				}
 				else if (comandos.substring(i, i+1).equalsIgnoreCase("u")) {
-					System.out.println("entrando no inventario! 1 para trocar de arma, 2 vara, 3 peixe");
 					gRef.setPanelActive('l', new GUIInventarioPanel(bond.getInventario(), 0));
 					leitor.desconectaControle();
 					leitor.conectaControle(new ControleInventario(bond.getInventario()));
@@ -74,30 +73,25 @@ public class ControleBond implements Controle{
 							return true;
 						}
 						leitor.desconectaControle();
-						System.out.println("entrando na oficina!");
 						gRef.setPanelActive('l', new GUIOficinaPanel(oficina));
 						leitor.conectaControle(new ControleOficina(bond.getInventario(), oficina));
 						return true;
 					}
-					System.out.println("entrando no mercado!");
-					
 					gRef.setPanelActive('l', new GUIMercadoPanel(bond.getInventario(), mercado, 0));
 					leitor.desconectaControle();
 					leitor.conectaControle(new ControleMercado(bond.getInventario(), mercado));
 					return true;
 				}else if (comandos.substring(i, i+1).equalsIgnoreCase("q")) {
-					//sethp -1
-					//break
+					gRef.gameOver(2);
 					return false;
 				} 
 				else {
 					System.out.println("Tecla invalida!");
 				}
-				resposta.tick();
+				resposta.tick(gRef);
 			}else{
 				return false;
-				
-				//perdeu (ou ganhou) playboy
+				//error
 			}
 		}
 		return true;
