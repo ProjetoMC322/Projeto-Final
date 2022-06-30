@@ -1,5 +1,7 @@
 package pt.labfinal.model.mapa;
 
+import java.awt.Image;
+import java.net.URL;
 import java.util.Random;
 
 import pt.labfinal.model.item.Peixe;
@@ -197,7 +199,7 @@ public class Mar {
 			return;
 		}
 	}
-	public String mostraImagem(int x, int y) {
+	public URL mostraImagem(int x, int y) {
 		return celulas[x][y].mostraImagem();
 	}
 }

@@ -1,8 +1,13 @@
 package pt.labfinal.view;
 import java.awt.*;
+import java.util.Objects;
+
 import javax.swing.*;
 
+import pt.labfinal.model.item.Item;
 import pt.labfinal.model.item.Peixe;
+import pt.labfinal.model.item.arma.Arma;
+import pt.labfinal.model.item.vara.Vara;
 import pt.labfinal.model.mapa.Resposta;
 import pt.labfinal.model.mapa.componente.Bond;
 import pt.labfinal.model.mapa.componente.inimigo.Inimigo;
@@ -37,14 +42,14 @@ public class GUIUtilsPanel extends JPanel{
 		i += 20;
 		g.drawString("Arma equipada: " + bond.getArmaAtiva().getNome(), 30, i);
 		i += 20;
-		g.drawImage(new ImageIcon(bond.getArmaAtiva().getImage()).getImage(), 40,  i, null);
+		g.drawImage(new ImageIcon(Objects.requireNonNull(Item.class.getResource(bond.getArmaAtiva().getImage()))).getImage(), 40,  i, null);
 		i += 70;
 		g.drawString("Municao: " + bond.getArmaAtiva().getMunicaoAtual() + "/" + 
 									bond.getArmaAtiva().getMunicaoMax() , 30, i);
 		i += 20;
 		g.drawString("Vara equipada: " + bond.getVaraAtiva().getNome(), 30, i);
 		i += 20;
-		g.drawImage(new ImageIcon(bond.getVaraAtiva().getImage()).getImage(), 40,  i, null);
+		g.drawImage(new ImageIcon(Objects.requireNonNull(Item.class.getResource(bond.getVaraAtiva().getImage()))).getImage(), 40,  i, null);
 		i += 70;
 		g.drawString("Durabilidade: " + bond.getVaraAtiva().getDurabilidadeAtual() + "/" + 
 									bond.getVaraAtiva().getDurabilidadeMax() , 30, i);
@@ -61,7 +66,7 @@ public class GUIUtilsPanel extends JPanel{
 		if(ultimaPescaria != null) {
 			g.drawString("Resultado da ultima pescaria:", 300, i);
 			i += 20;
-			g.drawImage(new ImageIcon(ultimaPescaria.getImage()).getImage(), 40,  i, null);
+			g.drawImage(new ImageIcon(Objects.requireNonNull(Item.class.getResource(ultimaPescaria.getImage()))).getImage(), 40,  i, null);
 			i += 70;
 			g.drawString(ultimaPescaria.getNome() + " Preco: " + ultimaPescaria.getPreco(), 30, i);
 		}

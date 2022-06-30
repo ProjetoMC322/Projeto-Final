@@ -1,5 +1,8 @@
 package pt.labfinal.model.mapa;
 
+import java.awt.Image;
+import java.net.URL;
+
 import pt.labfinal.model.item.Peixe;
 import pt.labfinal.model.mapa.componente.Bond;
 import pt.labfinal.model.mapa.componente.Componente;
@@ -105,7 +108,7 @@ public class Mapa {
 		mares[marAtivo].remove(c, x, y);
     }
     
-    public String mostraImagem(int x, int y) {
+    public URL mostraImagem(int x, int y) {
     	return mares[marAtivo].mostraImagem(x,y);
     }
     

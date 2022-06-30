@@ -1,5 +1,7 @@
 package pt.labfinal.view;
 import java.awt.*;
+import java.util.Objects;
+
 import javax.swing.*;
 
 import pt.labfinal.model.item.Peixe;
@@ -47,7 +49,7 @@ public class GUIInventarioPanel extends JPanel{
 						+ armas[aux].getMunicaoMax() + " com o preco de: " + armas[aux].getPreco(), 30, i);
 				
 				i += 20;
-				g.drawImage(new ImageIcon(armas[aux].getImage()).getImage(), 60,  i, null);
+				g.drawImage(new ImageIcon(Objects.requireNonNull(Arma.class.getResource(armas[aux].getImage()))).getImage(), 60,  i, null);
 				i += 70;
 				aux++;
 			}
@@ -60,7 +62,7 @@ public class GUIInventarioPanel extends JPanel{
 						+ varas[aux].getDurabilidadeMax() + " com o preco de: " + varas[aux].getPreco(), 30, i);
 				
 				i += 20;
-				g.drawImage(new ImageIcon(varas[aux].getImage()).getImage(), 60,  i, null);
+				g.drawImage(new ImageIcon(Objects.requireNonNull(Vara.class.getResource(varas[aux].getImage()))).getImage(), 60,  i, null);
 				i += 70;
 				aux++;
 			}
@@ -73,7 +75,7 @@ public class GUIInventarioPanel extends JPanel{
 						+ peixes[aux].getPreco() , 30, i);
 				
 				i += 20;
-				g.drawImage(new ImageIcon(peixes[aux].getImage()).getImage(), 60,  i, null);
+				g.drawImage(new ImageIcon(Objects.requireNonNull(Peixe.class.getResource(peixes[aux].getImage()))).getImage(), 60,  i, null);
 				i += 70;
 				aux++;
 			}

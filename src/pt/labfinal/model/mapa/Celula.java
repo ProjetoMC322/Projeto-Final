@@ -1,5 +1,11 @@
 package pt.labfinal.model.mapa;
 
+import java.awt.Image;
+import java.net.URL;
+import java.util.Objects;
+
+import javax.swing.ImageIcon;
+
 import pt.labfinal.model.mapa.componente.Bond;
 import pt.labfinal.model.mapa.componente.Componente;
 import pt.labfinal.model.mapa.componente.Individuo;
@@ -150,10 +156,10 @@ public class Celula {
 		}
 	}
 	
-	public String mostraImagem() {
+	public URL mostraImagem() {
 		if (componentes[0] == null) {
-			return "dinghyLarge1.png";
+			return null;
 		}
-		return componentes[0].getImage();
+		return Objects.requireNonNull(Componente.class.getResource(componentes[0].getImage()));
 	}
 }

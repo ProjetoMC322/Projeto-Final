@@ -1,23 +1,27 @@
 package pt.labfinal.model;
 
+import java.util.Objects;
 import java.util.Vector;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.IOException;
 
 public class Toolkit {
-	
+
 	   public static String DIRETORIO = System.getProperty("user.dir") +
 			                            "/data/";
 	   private static BufferedReader itemStr;
 	   private static BufferedReader componentesStr;
 	   
 	   public static String[][]retrieveItems() {
-		   String mapFile =  DIRETORIO + "item.csv";
+		   
 		   try {
+			   InputStream in = Toolkit.class.getResourceAsStream("/data/item.csv");
 			  itemStr = new BufferedReader(
-		               new FileReader(mapFile));
-		      } catch(IOException erro){
+		               new InputStreamReader(in));
+		      } catch(Exception erro){
 		         erro.printStackTrace();
 		      }
 		   	
@@ -37,11 +41,11 @@ public class Toolkit {
 	   }
 	   
 	   public static String[][]retrieveComponents() {
-		   String mapFile =  DIRETORIO + "componentes.csv";
 		   try {
+			   InputStream in = Toolkit.class.getResourceAsStream("/data/componentes.csv");
 			  componentesStr = new BufferedReader(
-		               new FileReader(mapFile));
-		      } catch(IOException erro){
+					  new InputStreamReader(in));
+		      } catch(Exception erro){
 		         erro.printStackTrace();
 		      }
 		   	

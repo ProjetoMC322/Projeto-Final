@@ -13,7 +13,7 @@ public class Peixe implements Item{
 		return nome;
 	}
 	public String getImage() {
-		return System.getProperty("user.dir") + imagem;
+		return imagem;
 	}
 	public int getPreco() {
 		return preco;

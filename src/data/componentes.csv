@@ -1,0 +1,43 @@
+B,Bond,0,0,0
+I,Capanga do Cartel,2,8,0,10,2,/assets/BadBoat.png
+I,Capanga do Cartel,8,1,0,10,2,/assets/BadBoat.png
+I,Capanga do Cartel,8,8,0,10,2,/assets/BadBoat.png
+C,Saida,9,9,0,/assets/saida.png
+O,9,4,0,2,5,1,10,/assets/Oficina1.png
+M,0,5,0,15,/assets/mercado1.png
+I,Pirata caribenho,1,0,1,11,2,/assets/pirata.png
+I,Pirata caribenho,0,0,1,11,2,/assets/pirata.png
+I,Pirata caribenho,9,9,1,11,2,/assets/pirata.png
+I,Pirata caribenho,0,7,1,11,2,/assets/pirata.png
+I,Capitao,2,7,1,20,5,/assets/capitao.png
+C,Entrada,9,0,1,/assets/entrada.png
+C,Saida,0,9,1,/assets/saida.png
+O,7,9,1,3,5,2,20,/assets/Oficina2.png
+M,0,5,1,15,/assets/mercado2.png
+I,Agente da Gestapo,0,5,2,20,3,/assets/Amarelo.png
+I,Agente da Gestapo,2,9,2,20,3,/assets/Amarelo.png
+I,Agente da Gestapo,5,9,2,20,3,/assets/Amarelo.png
+I,Tenente,8,8,2,25,8,/assets/Azul.png
+C,Entrada,0,0,2,/assets/entrada.png
+C,Saida,9,9,2,/assets/saida.png
+O,9,0,2,5,15,4,30,/assets/Oficina3.png
+M,0,9,2,20,/assets/mercado3.png
+I,Espiao russo,2,7,3,15,3,/assets/Vermelho.png
+I,Espiao russo,3,8,3,15,3,/assets/Vermelho.png
+I,Espiao russo,2,6,3,15,3,/assets/Vermelho.png
+I,Espiao russo,4,8,3,15,3,/assets/Vermelho.png
+I,Espiao russo,3,7,3,15,3,/assets/Vermelho.png
+I,Comandante Maximov,2,8,3,25,10,/assets/Preto.png
+C,Entrada,0,0,3,/assets/entrada.png
+C,Saida,9,9,3,/assets/saida.png
+O,0,0,3,10,150,8,250,/assets/Oficina4.png
+M,0,2,3,30,/assets/mercado4.png
+I,Soldado Siberiano,0,9,4,40,8,/assets/Branco.png
+I,Soldado Siberiano,9,0,4,40,8,/assets/Branco.png
+I,Soldado Siberiano,8,8,4,40,8,/assets/Branco.png
+C,Entrada,0,0,4,/assets/entrada.png
+C,Saida,9,9,4,/assets/saida.png
+O,9,4,4,20,300,16,500,/assets/Oficina5.png
+M,4,9,4,30,/assets/mercado5.png
+IG,Godzilla,5,8,5,400,10,/assets/Godzilla.png
+C,Entrada,5,0,5,/assets/entrada.png

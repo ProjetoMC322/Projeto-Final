@@ -33,7 +33,7 @@ public abstract class Componente{
 	}
 	
 	public String getImage() {
-		return System.getProperty("user.dir") + this.imagem;
+		return imagem;
 	}
 	
 	public int getHPMax() {
